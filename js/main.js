@@ -356,18 +356,18 @@
         const unit = card.getAttribute("data-unit") || "MT";
         const rate = Number(card.getAttribute("data-rate") || 0);
         const volume = qty;
-        const estimate = (volume * rate).toLocaleString("en-BD");
-        showToast(
-          "Added to Quote Request",
-          name +
-            " — " +
-            volume +
-            " " +
-            unit +
-            " · Est. volume calc: BDT " +
-            estimate +
-            " (mock)"
-        );
+        if (rate > 0) {
+          const estimate = (volume * rate).toLocaleString("en-BD");
+          showToast(
+            "Added to Quote Request",
+            name + " — " + volume + " " + unit + " · Est. volume calc: BDT " + estimate + " (indicative)"
+          );
+        } else {
+          showToast(
+            "Quote Request Submitted",
+            name + " — " + volume + " " + unit + " · Pricing available on request"
+          );
+        }
       });
     });
   }

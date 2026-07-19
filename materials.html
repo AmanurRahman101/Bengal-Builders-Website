@@ -33,7 +33,16 @@
 </head>
 <body class="antialiased">
 
-  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-obsidian/95 backdrop-blur-md">
+    <div class="border-b border-white/10">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-steel lg:px-8">
+        <span>Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
+        <span class="flex items-center gap-4">
+          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+        </span>
+      </div>
+    </div>
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
         <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
@@ -69,10 +78,10 @@
   </header>
 
   <main>
-    <section class="relative min-h-[48vh] overflow-hidden pt-24" aria-labelledby="mat-hero">
+    <section class="relative min-h-[48vh] overflow-hidden pt-32" aria-labelledby="mat-hero">
       <img
-        src="images/materials/hero-aggregates.jpg"
-        alt="Crushed stone aggregate pouring onto a quarry stockpile"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80"
+        alt="Heavy construction equipment and aggregate stockpile"
         class="absolute inset-0 h-full w-full object-cover"
       />
       <div class="page-hero-overlay absolute inset-0"></div>
@@ -82,7 +91,7 @@
           Raw Resource Catalogue
         </h1>
         <p class="mt-4 max-w-2xl text-steel leading-relaxed">
-          Premium bulk construction components — filter by type, set volume, and add to a quote request with mock aggregate calculations.
+          Premium bulk construction components — filter by type, set volume, and submit a quote request. Pricing is available on request.
         </p>
       </div>
     </section>
@@ -92,7 +101,7 @@
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between" data-reveal>
           <div>
             <h2 id="catalogue-heading" class="font-display text-4xl font-bold tracking-tight text-archwhite">Catalogue Controls</h2>
-            <p class="mt-3 max-w-lg text-sm text-steel">Live search and type filters update the grid instantly.</p>
+            <p class="mt-3 max-w-lg text-sm text-steel">Live search and type filters update the grid instantly. Pricing is available on request.</p>
           </div>
           <label class="block w-full max-w-md">
             <span class="sr-only">Search materials</span>
@@ -118,18 +127,17 @@
             data-stagger-item
             data-type="crushed-stone"
             data-name="Crushed Stone #1 — Fine Particles"
-            data-desc="Road and paver base fine crushed stone particles"
+            data-desc="Sizes from 1 inch down to fine particles for road and paver base"
             data-unit="MT"
-            data-rate="4200"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/fine-crushed-stone.jpg" alt="Fine crushed stone particles and screenings" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Fine crushed stone particles and screenings" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">Crushed Stone #1 — Fine Particles</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Road and paver base — graded fine particles for compaction layers.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Sizes from 1″ down to fine particles. Ideal for road and paver base layers where graded fines provide compaction and stability.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -138,7 +146,7 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -147,18 +155,17 @@
             data-stagger-item
             data-type="crushed-stone"
             data-name="Crushed Stone #3 (2&quot; to 4&quot;)"
-            data-desc="Culvert ballast large crushed stone"
+            data-desc="Largest crushed stone grade for culvert ballast and heavy fill"
             data-unit="MT"
-            data-rate="3900"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/large-crushed-stone.jpg" alt="Large angular crushed stone ballast at a quarry" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Large angular crushed stone ballast at a quarry" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">Crushed Stone #3 (2″ to 4″)</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Culvert ballast — heavy angular stone for drainage and structural fill.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">The largest crushed stone grade — sizes from 2″ to 4″. Used for heavy jobs such as culvert ballast, drainage, and structural fill.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -167,7 +174,7 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -178,16 +185,15 @@
             data-name="1/4&quot; &amp; 3/8&quot; Washed Clean Stone"
             data-desc="Washed clean stone and premium pea gravel"
             data-unit="MT"
-            data-rate="5100"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/washed-pea-gravel.jpg" alt="Washed pea gravel and clean stone aggregate" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Washed pea gravel and clean stone aggregate" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">¼″ &amp; ⅜″ Washed Clean Stone</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Premium pea gravel — washed clean for concrete mixes and decorative beds.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Washed clean stone screened to size, free of dust and residue. Suitable for ready-mix concrete, driveways, drainage, and decorative beds.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -196,7 +202,7 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -205,18 +211,17 @@
             data-stagger-item
             data-type="crushed-stone"
             data-name="Reflective 3/8&quot; White Marble Roofing Chips"
-            data-desc="White marble chips for reflective roofing"
+            data-desc="High-reflectivity marble aggregate for cool roofing"
             data-unit="MT"
-            data-rate="7800"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/white-marble-chips.jpg" alt="White marble chips for reflective roofing" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="White marble chips for reflective roofing" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">Reflective ⅜″ White Marble Roofing Chips</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">High-albedo marble chips for cool roofing and architectural topping.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">High-reflectivity marble aggregate with a max size of ⅜". Used as a final roof-surfacing material to reduce roof temperature.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -225,7 +230,7 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -234,18 +239,17 @@
             data-stagger-item
             data-type="crushed-stone"
             data-name="Quarry Process (QP) High-Compaction Traffic Base"
-            data-desc="Quarry process traffic base material"
+            data-desc="Blend of crushed stone and fines for high compaction base"
             data-unit="MT"
-            data-rate="3600"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/quarry-process-base.jpg" alt="Quarry process limestone road base with fines" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80" alt="Quarry process limestone road base with fines" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">Quarry Process (QP) Traffic Base</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">High-compaction traffic base material for roads and heavy-access pavements.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Blend of crushed stone and fines that binds together for high compaction. Ideal for driveways, roads, bike path bases, and paver patio sub-bases.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -254,7 +258,7 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -265,16 +269,15 @@
             data-name="Premium Sylhet Sand"
             data-desc="Heavy certified construction sand from Sylhet"
             data-unit="CFT"
-            data-rate="85"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/sylhet-sand.jpg" alt="Premium washed construction sand stockpile" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Premium washed construction sand stockpile" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">Premium Sylhet Sand</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Heavy certified construction sand — preferred for structural concrete mixes.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Heavy certified construction sand from Sylhet, preferred for structural concrete mixes and high-spec applications.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -283,7 +286,7 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -292,18 +295,17 @@
             data-stagger-item
             data-type="specialty-sand"
             data-name="High Quality River Sand"
-            data-desc="River sand for general construction and plastering"
+            data-desc="Graded river sand for general construction and plastering"
             data-unit="CFT"
-            data-rate="65"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/river-sand.jpg" alt="River sand deposits for construction works" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="River sand deposits for construction works" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">High Quality River Sand</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Graded river sand for general construction, plastering, and masonry.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Graded river sand for general construction, plastering, masonry, and finishing work across civil and building projects.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -312,7 +314,7 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -321,18 +323,17 @@
             data-stagger-item
             data-type="specialty-sand"
             data-name="White Sand"
-            data-desc="White sand for finishing and specialty applications"
+            data-desc="Specialty white sand for finishing and rendering"
             data-unit="CFT"
-            data-rate="95"
             class="flex flex-col border border-white/10 bg-obsidian"
           >
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="images/materials/white-sand.jpg" alt="Fine white sand for specialty construction finishes" class="h-full w-full object-cover" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80" alt="Fine white sand for specialty construction finishes" class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex flex-1 flex-col p-6">
               <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
               <h3 class="mt-2 text-lg font-bold text-archwhite">White Sand</h3>
-              <p class="mt-2 flex-1 text-sm text-steel">Specialty white sand for finishing coats and high-spec rendering applications.</p>
+              <p class="mt-2 flex-1 text-sm text-steel">Specialty white sand used for finishing coats, high-spec rendering, and architectural applications where colour matters.</p>
               <div class="mt-6 flex items-center justify-between gap-3">
                 <div class="flex items-center border border-white/15">
                   <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
@@ -341,7 +342,7 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Quote</button>
             </div>
           </article>
 
@@ -354,11 +355,18 @@
     <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
       <div>
         <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
-        <p class="mt-2 max-w-sm text-sm text-steel">Bulk aggregate supply with quote-ready volume mockups.</p>
+        <p class="mt-2 max-w-sm text-sm text-steel">Bulk aggregate supply with quote-ready volume requests.</p>
       </div>
       <div class="text-sm text-steel">
         <p class="font-semibold text-archwhite">Headquarters</p>
-        <p class="mt-2">Purana Paltan, Dhaka, Bangladesh</p>
+        <p class="mt-2">Pritom Zaman Tower (13th Floor)</p>
+        <p>37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
+        <p class="mt-2">
+          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
+        </p>
+        <p>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+        </p>
       </div>
       <nav aria-label="Footer">
         <ul class="flex flex-col gap-2 text-sm text-steel">

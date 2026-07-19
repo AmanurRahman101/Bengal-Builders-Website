@@ -48,5 +48,5 @@ Then visit `http://localhost:3000` (or the port shown).
 ## Company
 
 - Established: June 2021
-- Location: Purana Paltan, Dhaka, Bangladesh
+- Location: Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000, Bangladesh
 - Motto: Zero-incident workplace through teamwork, total commitment, extreme engineering precision, and advanced structural technology.
