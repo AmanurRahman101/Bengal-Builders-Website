@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Institutional portfolio ledger — ongoing infrastructure projects and completed capital contracts by BBCL." />
+  <title>Projects | BBCL — Institutional Portfolio Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#111317",
+            charcoal: "#1A1A1A",
+            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
+            steel: "#8A94A6",
+            archwhite: "#F8FAFC"
+          },
+          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
+    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
+    #site-nav.nav-scrolled {
+      background-color: rgba(17, 19, 23, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(245, 158, 11, 0.25);
+    }
+    .page-hero-overlay {
+      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.78) 55%, rgba(17,19,23,0.55) 100%);
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
+      <a href="index.html" class="group flex items-center gap-3">
+        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="leading-tight">
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+        </span>
+      </a>
+      <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
+        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="materials.html" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+      <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
+        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[48vh] overflow-hidden pt-24" aria-labelledby="proj-hero">
+      <img
+        src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=80"
+        alt="Large-scale infrastructure construction with cranes"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="page-hero-overlay absolute inset-0"></div>
+      <div class="relative mx-auto flex min-h-[48vh] max-w-7xl flex-col justify-end px-5 pb-14 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Institutional Portfolio Ledger</p>
+        <h1 id="proj-hero" class="mt-4 max-w-3xl text-4xl font-black uppercase tracking-tight text-archwhite sm:text-5xl">
+          Capital Works Record
+        </h1>
+        <p class="mt-4 max-w-2xl text-steel leading-relaxed">
+          On-going infrastructure programmes and completed capital contracts delivered under zero-incident field discipline.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-white/5 bg-charcoal py-16 lg:py-20" aria-labelledby="ledger-heading">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 id="ledger-heading" class="text-3xl font-extrabold tracking-tight text-archwhite">Project Ledger</h2>
+            <p class="mt-3 max-w-xl text-sm text-steel">Toggle between active infrastructure delivery and closed capital contracts.</p>
+          </div>
+          <div class="flex flex-wrap gap-3" role="tablist" aria-label="Project status">
+            <button type="button" role="tab" aria-selected="true" data-project-tab="ongoing" class="border border-amber-500 bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition">
+              On-Going Infrastructure
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-project-tab="completed" class="border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-steel transition hover:border-amber-500/50 hover:text-archwhite">
+              Completed Capital Contracts
+            </button>
+          </div>
+        </div>
+
+        <!-- On-Going -->
+        <div data-project-panel="ongoing" class="mt-12 space-y-6">
+          <article class="grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+            <div class="relative lg:col-span-4">
+              <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+                alt="Road and infrastructure reconstruction site"
+                class="h-56 w-full object-cover lg:h-full"
+                loading="lazy"
+              />
+              <span class="absolute left-4 top-4 bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian">Project A · Active</span>
+            </div>
+            <div class="p-7 lg:col-span-8 lg:p-9">
+              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+                Re-construction &amp; Repair of Rangpur Pirganj Infrastructure
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-steel">
+                Disaster Risk Management Enhancement Project (DRMEP) Component-3 — structural repair and reconstruction of critical local infrastructure in Pirganj, Rangpur.
+              </p>
+              <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Programme</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">DRMEP Component-3</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 3,97,47,364.58</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Pirganj, Rangpur, Bangladesh</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+            <div class="relative lg:col-span-4">
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
+                alt="Rural road network and earthworks construction"
+                class="h-56 w-full object-cover lg:h-full"
+                loading="lazy"
+              />
+              <span class="absolute left-4 top-4 bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian">Project B · Active</span>
+            </div>
+            <div class="p-7 lg:col-span-8 lg:p-9">
+              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+                Kabilpur &amp; Chattra Union Road Networks
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-steel">
+                Union road connectivity with box culverts and palisading earthworks — improving all-weather access and embankment stability.
+              </p>
+              <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Scope</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Roads · Box Culverts · Palisading</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 3,85,38,898.30</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Kabilpur &amp; Chattra Unions</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+            <div class="relative lg:col-span-4">
+              <img
+                src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80"
+                alt="RCC girder bridge spanning a river"
+                class="h-56 w-full object-cover lg:h-full"
+                loading="lazy"
+              />
+              <span class="absolute left-4 top-4 bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian">Project D · Active</span>
+            </div>
+            <div class="p-7 lg:col-span-8 lg:p-9">
+              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+                60m Long RCC Girder Bridge over Kharubhaj River
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-steel">
+                Major river-crossing structure — 60-metre RCC girder bridge delivering resilient connectivity for Sadar Rangpur.
+              </p>
+              <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Structure</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">60m RCC Girder Bridge</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 7,68,90,580.00</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Kharubhaj River, Sadar Rangpur</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </div>
+
+        <!-- Completed -->
+        <div data-project-panel="completed" class="mt-12 hidden space-y-6">
+          <article class="grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+            <div class="relative lg:col-span-4">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+                alt="Completed multi-storey institutional building"
+                class="h-56 w-full object-cover lg:h-full"
+                loading="lazy"
+              />
+              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project C · Completed</span>
+            </div>
+            <div class="p-7 lg:col-span-8 lg:p-9">
+              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+                4-Storied RCC Framework — Institute of Livestock Science Boys Hostel
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-steel">
+                Foundation and four-storied RCC framework for the Institute of Livestock Science Boys Hostel at Gaibandha. Completed certificate issued at 100% value achieved.
+              </p>
+              <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Status</dt>
+                  <dd class="mt-1 text-sm font-semibold text-amber-400">100% Value Achieved</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Project Director</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Dr. Md. Habibur Rahman</dd>
+                </div>
+                <div class="border-t border-white/10 pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-archwhite">Gaibandha, Bangladesh</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <div class="border border-dashed border-white/15 bg-obsidian/50 px-6 py-10 text-center">
+            <p class="text-sm text-steel">Additional completed contracts will be appended to this ledger as certificates are finalized.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-obsidian">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+      <div>
+        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        <p class="mt-2 max-w-sm text-sm text-steel">Institutional portfolio of infrastructure and capital works.</p>
+      </div>
+      <div class="text-sm text-steel">
+        <p class="font-semibold text-archwhite">Headquarters</p>
+        <p class="mt-2">Purana Paltan, Dhaka, Bangladesh</p>
+        <p class="mt-1">Established June 2021</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-col gap-2 text-sm text-steel">
+          <li><a href="index.html" class="hover:text-amber-400">Home</a></li>
+          <li><a href="materials.html" class="hover:text-amber-400">Materials</a></li>
+          <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Corporate identity, leadership, engineering registry, and legal compliance vault for Bengal Builders & Construction Ltd." />
+  <title>About | BBCL — Bengal Builders & Construction Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#111317",
+            charcoal: "#1A1A1A",
+            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
+            steel: "#8A94A6",
+            archwhite: "#F8FAFC"
+          },
+          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
+    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
+    #site-nav.nav-scrolled {
+      background-color: rgba(17, 19, 23, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(245, 158, 11, 0.25);
+    }
+    .page-hero-overlay {
+      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.75) 55%, rgba(17,19,23,0.55) 100%);
+    }
+    .grid-atmosphere {
+      background-image:
+        linear-gradient(rgba(138,148,166,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(138,148,166,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
+      <a href="index.html" class="group flex items-center gap-3">
+        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="leading-tight">
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+        </span>
+      </a>
+      <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
+        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="materials.html" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+      <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
+        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="relative min-h-[52vh] overflow-hidden pt-24" aria-labelledby="about-hero">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80"
+        alt="Architectural blueprint and structural design drawings"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="page-hero-overlay absolute inset-0"></div>
+      <div class="relative mx-auto flex min-h-[52vh] max-w-7xl flex-col justify-end px-5 pb-16 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Corporate Identity</p>
+        <h1 id="about-hero" class="mt-4 max-w-3xl text-4xl font-black uppercase tracking-tight text-archwhite sm:text-5xl">
+          Legal Transparency &amp; Leadership
+        </h1>
+        <p class="mt-4 max-w-2xl text-steel leading-relaxed">
+          Bengal Builders &amp; Construction Ltd. — established June 2021 in Purana Paltan, Dhaka — builds with institutional accountability from boardroom to basemat.
+        </p>
+      </div>
+    </section>
+
+    <!-- Executive Matrix -->
+    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-24" aria-labelledby="exec-heading">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Executive Matrix</p>
+        <h2 id="exec-heading" class="mt-3 text-3xl font-extrabold tracking-tight text-archwhite sm:text-4xl">Board leadership</h2>
+        <p class="mt-4 max-w-2xl text-steel">Governance profiles with verified identity references for institutional due diligence.</p>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          <article class="relative overflow-hidden border border-white/10 bg-obsidian">
+            <div class="absolute left-0 top-0 h-full w-1 bg-amber-500"></div>
+            <div class="p-8 sm:p-10">
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Chairman</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Mst. Nusrat Jahan Ratna</h3>
+              <dl class="mt-6 space-y-3 text-sm">
+                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
+                  <dt class="text-steel">Office</dt>
+                  <dd class="font-semibold text-archwhite">Chairman, BBCL</dd>
+                </div>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
+                  <dt class="text-steel">National ID</dt>
+                  <dd class="font-mono text-archwhite">5099221326</dd>
+                </div>
+                <div class="flex flex-wrap justify-between gap-2">
+                  <dt class="text-steel">Mandate</dt>
+                  <dd class="max-w-xs text-right text-archwhite">Strategic oversight &amp; institutional governance</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="relative overflow-hidden border border-white/10 bg-obsidian">
+            <div class="absolute left-0 top-0 h-full w-1 bg-amber-500"></div>
+            <div class="p-8 sm:p-10">
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Managing Director</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Mst. Salina Bibi</h3>
+              <dl class="mt-6 space-y-3 text-sm">
+                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
+                  <dt class="text-steel">Office</dt>
+                  <dd class="font-semibold text-archwhite">Managing Director, BBCL</dd>
+                </div>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
+                  <dt class="text-steel">National ID</dt>
+                  <dd class="font-mono text-archwhite">2713828691805</dd>
+                </div>
+                <div class="flex flex-wrap justify-between gap-2">
+                  <dt class="text-steel">Mandate</dt>
+                  <dd class="max-w-xs text-right text-archwhite">Operational execution &amp; commercial stewardship</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Registry -->
+    <section class="relative border-t border-white/5 bg-obsidian py-20 lg:py-24" aria-labelledby="eng-heading">
+      <div class="absolute inset-0 grid-atmosphere opacity-25"></div>
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Professional Engineering Registry</p>
+        <h2 id="eng-heading" class="mt-3 text-3xl font-extrabold tracking-tight text-archwhite sm:text-4xl">Elite technical team</h2>
+        <p class="mt-4 max-w-2xl text-steel">BUET-trained civil leadership directing field operations and construction delivery.</p>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <article class="border border-white/10 bg-charcoal/80 p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-xl font-extrabold text-archwhite">Engr. S.M Nazmul Alam</h3>
+                <p class="mt-1 text-sm font-semibold text-amber-400">GM — Operation</p>
+              </div>
+              <span class="border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Civil · BUET</span>
+            </div>
+            <p class="mt-6 text-sm leading-relaxed text-steel">
+              Directs site operations, resource sequencing, and zero-incident field protocols across multi-contract portfolios.
+            </p>
+            <p class="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-archwhite"><span class="text-amber-400">18</span> Years Experience</p>
+          </article>
+
+          <article class="border border-white/10 bg-charcoal/80 p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-xl font-extrabold text-archwhite">Engr. Kazi Rafique Anwer</h3>
+                <p class="mt-1 text-sm font-semibold text-amber-400">AGM — Construction</p>
+              </div>
+              <span class="border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Civil · BUET</span>
+            </div>
+            <p class="mt-6 text-sm leading-relaxed text-steel">
+              Leads RCC superstructure execution, girder bridge construction, and quality assurance for capital works.
+            </p>
+            <p class="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-archwhite"><span class="text-amber-400">22</span> Years Experience</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance & Legal Vault -->
+    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-24" aria-labelledby="legal-heading">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Compliance &amp; Legal Vault</p>
+        <h2 id="legal-heading" class="mt-3 text-3xl font-extrabold tracking-tight text-archwhite sm:text-4xl">Institutional credentials</h2>
+        <p class="mt-4 max-w-2xl text-steel">Select a credential to open a fullscreen glass preview of registry details.</p>
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <button
+            type="button"
+            data-legal-card
+            data-title="Trade License"
+            data-meta="TRAD/DSCC/063035/2020"
+            data-body="Dhaka South City Corporation Trade License authorizing Bengal Builders & Construction Ltd. to conduct construction and related commercial operations within the licensed jurisdiction. Credential reference: TRAD/DSCC/063035/2020."
+            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            tabindex="0"
+          >
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 01</p>
+            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Trade License</h3>
+            <p class="mt-2 font-mono text-xs text-steel">TRAD/DSCC/063035/2020</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">Open preview →</p>
+          </button>
+
+          <button
+            type="button"
+            data-legal-card
+            data-title="e-TIN"
+            data-meta="177353450963"
+            data-body="Electronic Taxpayer Identification Number registered for Bengal Builders & Construction Ltd. TIN: 177353450963. Used for all statutory tax filings and institutional contracting compliance."
+            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            tabindex="0"
+          >
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 02</p>
+            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">e-TIN</h3>
+            <p class="mt-2 font-mono text-xs text-steel">177353450963</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">Open preview →</p>
+          </button>
+
+          <button
+            type="button"
+            data-legal-card
+            data-title="Certificate of Incorporation"
+            data-meta="C-171911/2021"
+            data-body="Certificate of Incorporation confirming legal formation of Bengal Builders & Construction Ltd. under applicable company law. Incorporation reference: C-171911/2021. Established June 2021."
+            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            tabindex="0"
+          >
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 03</p>
+            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Certificate of Incorporation</h3>
+            <p class="mt-2 font-mono text-xs text-steel">C-171911/2021</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">Open preview →</p>
+          </button>
+
+          <button
+            type="button"
+            data-legal-card
+            data-title="Income Tax Certificate"
+            data-meta="Circle-155 Zone-8"
+            data-body="Income Tax Certificate issued under Circle-155, Zone-8 confirming tax compliance status of Bengal Builders & Construction Ltd. for institutional tender and contracting eligibility."
+            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            tabindex="0"
+          >
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 04</p>
+            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Income Tax Certificate</h3>
+            <p class="mt-2 font-mono text-xs text-steel">Circle-155 Zone-8</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">Open preview →</p>
+          </button>
+
+          <button
+            type="button"
+            data-legal-card
+            data-title="Modhumoti Bank Solvency Registry"
+            data-meta="A/C No: 113511100000224"
+            data-body="Bank solvency / financial standing reference with Modhumoti Bank. Account No: 113511100000224. Available for institutional due diligence and bid security verification subject to bank confirmation."
+            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 sm:col-span-2 lg:col-span-1"
+            tabindex="0"
+          >
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 05</p>
+            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Modhumoti Bank Solvency</h3>
+            <p class="mt-2 font-mono text-xs text-steel">A/C No: 113511100000224</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">Open preview →</p>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Legal Modal -->
+  <div id="legal-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+    <div id="legal-modal-backdrop" class="absolute inset-0 bg-obsidian/70 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-2xl border border-amber-500/30 bg-charcoal/90 p-8 shadow-2xl backdrop-blur-xl sm:p-10">
+      <button id="legal-modal-close" type="button" class="absolute right-4 top-4 border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-archwhite transition hover:border-amber-400 hover:text-amber-400" aria-label="Close modal">Close</button>
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Credential Preview</p>
+      <h2 id="legal-modal-title" class="mt-4 text-2xl font-extrabold text-archwhite sm:text-3xl"></h2>
+      <p id="legal-modal-meta" class="mt-3 font-mono text-sm text-amber-400"></p>
+      <div class="mt-6 h-px w-full bg-gradient-to-r from-amber-500/60 via-white/10 to-transparent"></div>
+      <p id="legal-modal-body" class="mt-6 text-sm leading-relaxed text-steel"></p>
+      <p class="mt-8 text-[11px] uppercase tracking-[0.16em] text-steel">Bengal Builders &amp; Construction Ltd. · Purana Paltan, Dhaka</p>
+    </div>
+  </div>
+
+  <footer class="border-t border-white/10 bg-obsidian">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+      <div>
+        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        <p class="mt-2 max-w-sm text-sm text-steel">Corporate identity &amp; legal transparency for institutional partners.</p>
+      </div>
+      <div class="text-sm text-steel">
+        <p class="font-semibold text-archwhite">Headquarters</p>
+        <p class="mt-2">Purana Paltan, Dhaka, Bangladesh</p>
+        <p class="mt-1">Established June 2021</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-col gap-2 text-sm text-steel">
+          <li><a href="index.html" class="hover:text-amber-400">Home</a></li>
+          <li><a href="activities.html" class="hover:text-amber-400">Activities</a></li>
+          <li><a href="projects.html" class="hover:text-amber-400">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

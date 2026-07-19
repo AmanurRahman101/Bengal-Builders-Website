@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive aggregate e-catalogue — crushed stone, specialty sands, and quarry process materials from BBCL." />
+  <title>Materials | BBCL — Aggregate E-Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#111317",
+            charcoal: "#1A1A1A",
+            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
+            steel: "#8A94A6",
+            archwhite: "#F8FAFC"
+          },
+          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
+    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
+    #site-nav.nav-scrolled {
+      background-color: rgba(17, 19, 23, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(245, 158, 11, 0.25);
+    }
+    .page-hero-overlay {
+      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.78) 55%, rgba(17,19,23,0.55) 100%);
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
+      <a href="index.html" class="group flex items-center gap-3">
+        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="leading-tight">
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+        </span>
+      </a>
+      <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
+        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="materials.html#catalogue" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+      <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
+        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
+        <li class="pt-2"><a href="materials.html#catalogue" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[48vh] overflow-hidden pt-24" aria-labelledby="mat-hero">
+      <img
+        src="images/materials/hero-aggregates.jpg"
+        alt="Crushed stone aggregate pouring onto a quarry stockpile"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="page-hero-overlay absolute inset-0"></div>
+      <div class="relative mx-auto flex min-h-[48vh] max-w-7xl flex-col justify-end px-5 pb-14 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Interactive Aggregate E-Catalogue</p>
+        <h1 id="mat-hero" class="mt-4 max-w-3xl text-4xl font-black uppercase tracking-tight text-archwhite sm:text-5xl">
+          Raw Resource Catalogue
+        </h1>
+        <p class="mt-4 max-w-2xl text-steel leading-relaxed">
+          Premium bulk construction components — filter by type, set volume, and add to a quote request with mock aggregate calculations.
+        </p>
+      </div>
+    </section>
+
+    <section id="catalogue" class="border-t border-white/5 bg-charcoal py-16 lg:py-20" aria-labelledby="catalogue-heading">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 id="catalogue-heading" class="text-3xl font-extrabold tracking-tight text-archwhite">Catalogue Controls</h2>
+            <p class="mt-3 max-w-lg text-sm text-steel">Live search and type filters update the grid instantly.</p>
+          </div>
+          <label class="block w-full max-w-md">
+            <span class="sr-only">Search materials</span>
+            <input
+              id="material-search"
+              type="search"
+              placeholder="Search aggregates, stone, sand…"
+              class="w-full border border-white/15 bg-obsidian px-4 py-3 text-sm text-archwhite placeholder:text-steel/70 focus:border-amber-500 focus:outline-none"
+            />
+          </label>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3" role="tablist" aria-label="Material type filters">
+          <button type="button" role="tab" aria-selected="true" data-material-tab="all" class="border border-amber-500 bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition">All Aggregates</button>
+          <button type="button" role="tab" aria-selected="false" data-material-tab="crushed-stone" class="border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-steel transition hover:border-amber-500/50 hover:text-archwhite">Crushed Stone</button>
+          <button type="button" role="tab" aria-selected="false" data-material-tab="specialty-sand" class="border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-steel transition hover:border-amber-500/50 hover:text-archwhite">Specialty Sand</button>
+        </div>
+
+        <div id="materials-grid" class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+
+          <article
+            data-material
+            data-type="crushed-stone"
+            data-name="Crushed Stone #1 — Fine Particles"
+            data-desc="Road and paver base fine crushed stone particles"
+            data-unit="MT"
+            data-rate="4200"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/fine-crushed-stone.jpg" alt="Fine crushed stone particles and screenings" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">Crushed Stone #1 — Fine Particles</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Road and paver base — graded fine particles for compaction layers.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">MT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="crushed-stone"
+            data-name="Crushed Stone #3 (2&quot; to 4&quot;)"
+            data-desc="Culvert ballast large crushed stone"
+            data-unit="MT"
+            data-rate="3900"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/large-crushed-stone.jpg" alt="Large angular crushed stone ballast at a quarry" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">Crushed Stone #3 (2″ to 4″)</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Culvert ballast — heavy angular stone for drainage and structural fill.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">MT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="crushed-stone"
+            data-name="1/4&quot; &amp; 3/8&quot; Washed Clean Stone"
+            data-desc="Washed clean stone and premium pea gravel"
+            data-unit="MT"
+            data-rate="5100"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/washed-pea-gravel.jpg" alt="Washed pea gravel and clean stone aggregate" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">¼″ &amp; ⅜″ Washed Clean Stone</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Premium pea gravel — washed clean for concrete mixes and decorative beds.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">MT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="crushed-stone"
+            data-name="Reflective 3/8&quot; White Marble Roofing Chips"
+            data-desc="White marble chips for reflective roofing"
+            data-unit="MT"
+            data-rate="7800"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/white-marble-chips.jpg" alt="White marble chips for reflective roofing" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">Reflective ⅜″ White Marble Roofing Chips</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">High-albedo marble chips for cool roofing and architectural topping.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">MT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="crushed-stone"
+            data-name="Quarry Process (QP) High-Compaction Traffic Base"
+            data-desc="Quarry process traffic base material"
+            data-unit="MT"
+            data-rate="3600"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/quarry-process-base.jpg" alt="Quarry process limestone road base with fines" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Crushed Stone</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">Quarry Process (QP) Traffic Base</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">High-compaction traffic base material for roads and heavy-access pavements.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">MT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="specialty-sand"
+            data-name="Premium Sylhet Sand"
+            data-desc="Heavy certified construction sand from Sylhet"
+            data-unit="CFT"
+            data-rate="85"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/sylhet-sand.jpg" alt="Premium washed construction sand stockpile" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">Premium Sylhet Sand</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Heavy certified construction sand — preferred for structural concrete mixes.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">CFT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="specialty-sand"
+            data-name="High Quality River Sand"
+            data-desc="River sand for general construction and plastering"
+            data-unit="CFT"
+            data-rate="65"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/river-sand.jpg" alt="River sand deposits for construction works" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">High Quality River Sand</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Graded river sand for general construction, plastering, and masonry.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">CFT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+          <article
+            data-material
+            data-type="specialty-sand"
+            data-name="White Sand"
+            data-desc="White sand for finishing and specialty applications"
+            data-unit="CFT"
+            data-rate="95"
+            class="flex flex-col border border-white/10 bg-obsidian"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="images/materials/white-sand.jpg" alt="Fine white sand for specialty construction finishes" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-400">Specialty Sand</p>
+              <h3 class="mt-2 text-lg font-bold text-archwhite">White Sand</h3>
+              <p class="mt-2 flex-1 text-sm text-steel">Specialty white sand for finishing coats and high-spec rendering applications.</p>
+              <div class="mt-6 flex items-center justify-between gap-3">
+                <div class="flex items-center border border-white/15">
+                  <button type="button" data-qty-minus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Decrease quantity">−</button>
+                  <span data-qty class="min-w-[2rem] text-center text-sm font-bold tabular-nums">1</span>
+                  <button type="button" data-qty-plus class="px-3 py-2 text-archwhite hover:bg-white/5" aria-label="Increase quantity">+</button>
+                </div>
+                <span class="text-xs text-steel">CFT</span>
+              </div>
+              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-obsidian">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+      <div>
+        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        <p class="mt-2 max-w-sm text-sm text-steel">Bulk aggregate supply with quote-ready volume mockups.</p>
+      </div>
+      <div class="text-sm text-steel">
+        <p class="font-semibold text-archwhite">Headquarters</p>
+        <p class="mt-2">Purana Paltan, Dhaka, Bangladesh</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-col gap-2 text-sm text-steel">
+          <li><a href="activities.html" class="hover:text-amber-400">Activities</a></li>
+          <li><a href="projects.html" class="hover:text-amber-400">Projects</a></li>
+          <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

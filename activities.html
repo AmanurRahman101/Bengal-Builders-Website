@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Technical services and engineering matrix — foundations, superstructures, finishes, MEP & civil works by BBCL." />
+  <title>Activities | BBCL — Technical Services Matrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#111317",
+            charcoal: "#1A1A1A",
+            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
+            steel: "#8A94A6",
+            archwhite: "#F8FAFC"
+          },
+          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
+    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
+    #site-nav.nav-scrolled {
+      background-color: rgba(17, 19, 23, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(245, 158, 11, 0.25);
+    }
+    .page-hero-overlay {
+      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.78) 50%, rgba(17,19,23,0.55) 100%);
+    }
+    [data-activity-bar] {
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      [data-activity-bar] { transition: none; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
+      <a href="index.html" class="group flex items-center gap-3">
+        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="leading-tight">
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+        </span>
+      </a>
+      <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
+        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="materials.html" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+      <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
+        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[52vh] overflow-hidden pt-24" aria-labelledby="act-hero">
+      <img
+        src="https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1800&q=80"
+        alt="Reinforced concrete construction with steel rebar cages"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="page-hero-overlay absolute inset-0"></div>
+      <div class="relative mx-auto flex min-h-[52vh] max-w-7xl flex-col justify-end px-5 pb-16 lg:px-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Technical Services Matrix</p>
+        <h1 id="act-hero" class="mt-4 max-w-3xl text-4xl font-black uppercase tracking-tight text-archwhite sm:text-5xl">
+          Engineering Disciplines
+        </h1>
+        <p class="mt-4 max-w-2xl text-steel leading-relaxed">
+          Deep structural capability across foundations, superstructures, finishes, fenestration, MEP, and civil stone works.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-28" aria-labelledby="matrix-heading">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 id="matrix-heading" class="text-3xl font-extrabold tracking-tight text-archwhite sm:text-4xl">Core disciplines</h2>
+          <p class="mt-4 text-steel leading-relaxed">Industrial micro-interactions mark each discipline as you scan the matrix — precision from basemat to curtain wall.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-2">
+          <!-- Foundation Systems -->
+          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
+                alt="Deep excavation and foundation works on a construction site"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-8">
+              <div data-activity-bar class="mb-5 h-0.5 w-16 bg-amber-500"></div>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Discipline 01</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Foundation Systems</h3>
+              <ul class="mt-5 space-y-3 text-sm text-steel">
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Cast-in-Situ Piling</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Heavy Pre-Cast Pile Driving</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Multi-Level Complex Basement Structural Excavations</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Superstructures -->
+          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+                alt="High-rise reinforced concrete framework under construction"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-8">
+              <div data-activity-bar class="mb-5 h-0.5 w-16 bg-amber-500"></div>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Discipline 02</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Superstructures</h3>
+              <ul class="mt-5 space-y-3 text-sm text-steel">
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>High-Rise Reinforced Concrete Frameworks</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Pre-Fabricated Pre-Engineered Steel Structural Work</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Finishes & Fenestration -->
+          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Curtain wall glass facade on a modern building"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-8">
+              <div data-activity-bar class="mb-5 h-0.5 w-16 bg-amber-500"></div>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Discipline 03</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Finishes &amp; Fenestration</h3>
+              <ul class="mt-5 space-y-3 text-sm text-steel">
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Industrial Aluminum Fabrication</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Curtain Wall Glass Assemblies</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Double Glazing Systems</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>High-spec Paint / Rendering</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- MEP & Civil -->
+          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
+                alt="Industrial electrical and mechanical installation works"
+                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div class="p-8">
+              <div data-activity-bar class="mb-5 h-0.5 w-16 bg-amber-500"></div>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Discipline 04</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">MEP &amp; Civil</h3>
+              <ul class="mt-5 space-y-3 text-sm text-steel">
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Premium Electrical Installations</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Sanitary &amp; Specialized Plumbing</li>
+                <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-amber-500"></span>Heavy Stone (Marble / Granite) Slab Work</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-white/5 bg-obsidian py-16">
+      <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center lg:px-8">
+        <p class="max-w-xl text-lg font-semibold text-archwhite">Specify bulk aggregates for your next pour, or review active capital contracts.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="materials.html" class="inline-flex bg-amber-500 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Materials Catalogue</a>
+          <a href="projects.html" class="inline-flex border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] text-archwhite transition hover:border-amber-400 hover:text-amber-400">Project Ledger</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-charcoal">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+      <div>
+        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        <p class="mt-2 max-w-sm text-sm text-steel">Technical services spanning foundations to fenestration.</p>
+      </div>
+      <div class="text-sm text-steel">
+        <p class="font-semibold text-archwhite">Headquarters</p>
+        <p class="mt-2">Purana Paltan, Dhaka, Bangladesh</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-col gap-2 text-sm text-steel">
+          <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+          <li><a href="materials.html" class="hover:text-amber-400">Materials</a></li>
+          <li><a href="projects.html" class="hover:text-amber-400">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
