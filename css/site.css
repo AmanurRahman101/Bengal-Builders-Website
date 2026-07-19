@@ -360,26 +360,6 @@ input[type="text"]:focus {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Reveal helpers (GSAP sets final state; CSS avoids FOUC)                   */
-/* -------------------------------------------------------------------------- */
-
-/* Only hide for motion when JS is present — keeps content readable if scripts fail */
-html.js:not(.no-motion):not(.reveal-ready) [data-reveal],
-html.js:not(.no-motion):not(.reveal-ready) [data-stagger-item],
-html.js:not(.no-motion):not(.reveal-ready) [data-hero] {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-  will-change: opacity, transform;
-}
-
-html.js [data-reveal].is-shown,
-html.js [data-stagger-item].is-shown {
-  opacity: 1;
-  transform: none;
-  will-change: auto;
-}
-
-/* -------------------------------------------------------------------------- */
 /* Modal + toast polish                                                      */
 /* -------------------------------------------------------------------------- */
 
@@ -455,11 +435,6 @@ html.js [data-stagger-item].is-shown {
   #site-nav,
   #site-nav a[data-nav]::after {
     transition: none !important;
-  }
-
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
   }
 
   .btn-primary:hover,

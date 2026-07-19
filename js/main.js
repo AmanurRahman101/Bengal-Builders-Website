@@ -55,6 +55,7 @@
 
   /* --------------------------------------------------------------------------
    * GSAP: hero, scroll reveals, subtle parallax
+   * Content stays visible by default — motion is progressive enhancement only.
    * ------------------------------------------------------------------------ */
   function initMotion() {
     const heroMedia = document.querySelector(".hero-media");
@@ -62,93 +63,80 @@
       heroMedia.classList.add("is-ready");
     }
 
-    if (typeof gsap === "undefined") {
-      document.documentElement.classList.add("reveal-ready");
-      return;
-    }
+    if (prefersReducedMotion || typeof gsap === "undefined") return;
 
-    if (prefersReducedMotion) {
-      document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-shown"));
-      return;
-    }
+    try {
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+      }
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    const heroBits = document.querySelectorAll("[data-hero]");
-    if (heroBits.length) {
-      gsap.fromTo(
-        heroBits,
-        { autoAlpha: 0, y: 36 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
+      const heroBits = document.querySelectorAll("[data-hero]");
+      if (heroBits.length) {
+        gsap.from(heroBits, {
+          autoAlpha: 0,
+          y: 28,
+          duration: 0.9,
           ease: "power3.out",
-          stagger: 0.12,
-          delay: 0.1,
-          clearProps: "transform",
-        }
-      );
-    }
+          stagger: 0.1,
+          delay: 0.05,
+          clearProps: "all",
+        });
+      }
 
-    if (heroMedia) {
-      gsap.to(heroMedia, {
-        yPercent: 12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroMedia.closest("section") || heroMedia,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    }
+      if (heroMedia && typeof ScrollTrigger !== "undefined") {
+        gsap.to(heroMedia, {
+          yPercent: 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroMedia.closest("section") || heroMedia,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
 
-    const revealEls = gsap.utils.toArray("[data-reveal]");
-    revealEls.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { autoAlpha: 0, y: 32 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.85,
+      if (typeof ScrollTrigger === "undefined") return;
+
+      gsap.utils.toArray("[data-reveal]").forEach((el) => {
+        gsap.from(el, {
+          autoAlpha: 0,
+          y: 24,
+          duration: 0.75,
           ease: "power3.out",
+          clearProps: "all",
           scrollTrigger: {
             trigger: el,
-            start: "top 88%",
+            start: "top 90%",
             once: true,
+            toggleActions: "play none none none",
           },
-          onComplete: () => el.classList.add("is-shown"),
-        }
-      );
-    });
+        });
+      });
 
-    const staggerGroups = document.querySelectorAll("[data-stagger]");
-    staggerGroups.forEach((group) => {
-      const items = group.querySelectorAll("[data-stagger-item]");
-      if (!items.length) return;
+      document.querySelectorAll("[data-stagger]").forEach((group) => {
+        const items = group.querySelectorAll("[data-stagger-item]");
+        if (!items.length) return;
 
-      gsap.fromTo(
-        items,
-        { autoAlpha: 0, y: 28 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.7,
+        gsap.from(items, {
+          autoAlpha: 0,
+          y: 22,
+          duration: 0.65,
           ease: "power3.out",
-          stagger: 0.08,
+          stagger: 0.07,
+          clearProps: "all",
           scrollTrigger: {
             trigger: group,
-            start: "top 85%",
+            start: "top 88%",
             once: true,
+            toggleActions: "play none none none",
           },
-          onComplete: () => {
-            items.forEach((item) => item.classList.add("is-shown"));
-          },
-        }
-      );
-    });
+        });
+      });
+    } catch (err) {
+      // Never leave the page blank if motion setup fails
+      console.warn("Motion init skipped:", err);
+    }
   }
 
   /* --------------------------------------------------------------------------
