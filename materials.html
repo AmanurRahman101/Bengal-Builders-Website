@@ -7,7 +7,7 @@
   <title>Materials | BBCL — Aggregate E-Catalogue</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,33 +20,23 @@
             steel: "#8A94A6",
             archwhite: "#F8FAFC"
           },
-          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+          fontFamily: {
+            sans: ["Montserrat", "ui-sans-serif", "sans-serif"],
+            display: ["Barlow Condensed", "Montserrat", "sans-serif"]
+          }
         }
       }
     };
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
-    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
-    #site-nav.nav-scrolled {
-      background-color: rgba(17, 19, 23, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom-color: rgba(245, 158, 11, 0.25);
-    }
-    .page-hero-overlay {
-      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.78) 55%, rgba(17,19,23,0.55) 100%);
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/site.css" />
 </head>
 <body class="antialiased">
 
   <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
         <span class="leading-tight">
           <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
           <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
@@ -60,13 +50,13 @@
         <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
       </ul>
       <div class="flex items-center gap-3">
-        <a href="materials.html#catalogue" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <a href="materials.html#catalogue" class="btn-primary hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a>
         <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+    <div id="mobile-menu" class="border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
       <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
         <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
         <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
@@ -99,9 +89,9 @@
 
     <section id="catalogue" class="border-t border-white/5 bg-charcoal py-16 lg:py-20" aria-labelledby="catalogue-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between" data-reveal>
           <div>
-            <h2 id="catalogue-heading" class="text-3xl font-extrabold tracking-tight text-archwhite">Catalogue Controls</h2>
+            <h2 id="catalogue-heading" class="font-display text-4xl font-bold tracking-tight text-archwhite">Catalogue Controls</h2>
             <p class="mt-3 max-w-lg text-sm text-steel">Live search and type filters update the grid instantly.</p>
           </div>
           <label class="block w-full max-w-md">
@@ -121,10 +111,11 @@
           <button type="button" role="tab" aria-selected="false" data-material-tab="specialty-sand" class="border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-steel transition hover:border-amber-500/50 hover:text-archwhite">Specialty Sand</button>
         </div>
 
-        <div id="materials-grid" class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div id="materials-grid" class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3" data-stagger>
 
           <article
             data-material
+            data-stagger-item
             data-type="crushed-stone"
             data-name="Crushed Stone #1 — Fine Particles"
             data-desc="Road and paver base fine crushed stone particles"
@@ -147,12 +138,13 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="crushed-stone"
             data-name="Crushed Stone #3 (2&quot; to 4&quot;)"
             data-desc="Culvert ballast large crushed stone"
@@ -175,12 +167,13 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="crushed-stone"
             data-name="1/4&quot; &amp; 3/8&quot; Washed Clean Stone"
             data-desc="Washed clean stone and premium pea gravel"
@@ -203,12 +196,13 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="crushed-stone"
             data-name="Reflective 3/8&quot; White Marble Roofing Chips"
             data-desc="White marble chips for reflective roofing"
@@ -231,12 +225,13 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="crushed-stone"
             data-name="Quarry Process (QP) High-Compaction Traffic Base"
             data-desc="Quarry process traffic base material"
@@ -259,12 +254,13 @@
                 </div>
                 <span class="text-xs text-steel">MT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="specialty-sand"
             data-name="Premium Sylhet Sand"
             data-desc="Heavy certified construction sand from Sylhet"
@@ -287,12 +283,13 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="specialty-sand"
             data-name="High Quality River Sand"
             data-desc="River sand for general construction and plastering"
@@ -315,12 +312,13 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
           <article
             data-material
+            data-stagger-item
             data-type="specialty-sand"
             data-name="White Sand"
             data-desc="White sand for finishing and specialty applications"
@@ -343,7 +341,7 @@
                 </div>
                 <span class="text-xs text-steel">CFT</span>
               </div>
-              <button type="button" data-add-quote class="mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
+              <button type="button" data-add-quote class="btn-primary mt-4 w-full bg-amber-500 py-3 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Add to Quote Request</button>
             </div>
           </article>
 
@@ -372,8 +370,8 @@
     </div>
     <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
   </footer>
-
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

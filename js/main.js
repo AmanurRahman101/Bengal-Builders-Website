@@ -1,13 +1,17 @@
 /**
  * Bengal Builders & Construction Ltd. (BBCL)
- * Shared UI interaction layer — vanilla JS, no dependencies
+ * Shared UI + motion layer
  */
 
 (function () {
   "use strict";
 
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("js");
+  if (prefersReducedMotion) document.documentElement.classList.add("no-motion");
+
   /* --------------------------------------------------------------------------
-   * Sticky nav glassmorphism
+   * Sticky nav + mobile menu
    * ------------------------------------------------------------------------ */
   function initNav() {
     const nav = document.getElementById("site-nav");
@@ -16,38 +20,134 @@
 
     if (nav) {
       const onScroll = () => {
-        if (window.scrollY > 24) {
-          nav.classList.add("nav-scrolled");
-        } else {
-          nav.classList.remove("nav-scrolled");
-        }
+        nav.classList.toggle("nav-scrolled", window.scrollY > 24);
       };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
     }
 
     if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener("click", () => {
-        const open = mobileMenu.classList.toggle("hidden") === false;
+      mobileMenu.classList.remove("hidden");
+
+      const setOpen = (open) => {
+        mobileMenu.classList.toggle("is-open", open);
         menuBtn.setAttribute("aria-expanded", String(open));
+      };
+
+      menuBtn.addEventListener("click", () => {
+        setOpen(!mobileMenu.classList.contains("is-open"));
       });
 
       mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", () => setOpen(false));
       });
     }
 
-    // Highlight active nav link
     const path = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("[data-nav]").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === path || (path === "" && href === "index.html")) {
-        link.classList.add("text-amber-400");
+        link.classList.add("text-amber-400", "is-active");
         link.classList.remove("text-steel");
       }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+   * GSAP: hero, scroll reveals, subtle parallax
+   * ------------------------------------------------------------------------ */
+  function initMotion() {
+    const heroMedia = document.querySelector(".hero-media");
+    if (heroMedia && !prefersReducedMotion) {
+      heroMedia.classList.add("is-ready");
+    }
+
+    if (typeof gsap === "undefined") {
+      document.documentElement.classList.add("reveal-ready");
+      return;
+    }
+
+    if (prefersReducedMotion) {
+      document.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("is-shown"));
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroBits = document.querySelectorAll("[data-hero]");
+    if (heroBits.length) {
+      gsap.fromTo(
+        heroBits,
+        { autoAlpha: 0, y: 36 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.12,
+          delay: 0.1,
+          clearProps: "transform",
+        }
+      );
+    }
+
+    if (heroMedia) {
+      gsap.to(heroMedia, {
+        yPercent: 12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroMedia.closest("section") || heroMedia,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+
+    const revealEls = gsap.utils.toArray("[data-reveal]");
+    revealEls.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0, y: 32 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.85,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            once: true,
+          },
+          onComplete: () => el.classList.add("is-shown"),
+        }
+      );
+    });
+
+    const staggerGroups = document.querySelectorAll("[data-stagger]");
+    staggerGroups.forEach((group) => {
+      const items = group.querySelectorAll("[data-stagger-item]");
+      if (!items.length) return;
+
+      gsap.fromTo(
+        items,
+        { autoAlpha: 0, y: 28 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: group,
+            start: "top 85%",
+            once: true,
+          },
+          onComplete: () => {
+            items.forEach((item) => item.classList.add("is-shown"));
+          },
+        }
+      );
     });
   }
 
@@ -65,9 +165,11 @@
       const value = from + (target - from) * eased;
       el.textContent = isFloat ? value.toFixed(0) : Math.round(value).toLocaleString();
       if (progress < 1) requestAnimationFrame(frame);
-      else el.textContent = isFloat
-        ? target.toLocaleString()
-        : Math.round(target).toLocaleString();
+      else {
+        el.textContent = isFloat
+          ? target.toLocaleString()
+          : Math.round(target).toLocaleString();
+      }
     }
 
     requestAnimationFrame(frame);
@@ -88,7 +190,11 @@
             counters.forEach((el) => {
               const target = Number(el.getAttribute("data-count"));
               const duration = Number(el.getAttribute("data-duration") || 1600);
-              animateCount(el, target, duration);
+              if (prefersReducedMotion) {
+                el.textContent = Math.round(target).toLocaleString();
+              } else {
+                animateCount(el, target, duration);
+              }
             });
             observer.disconnect();
           }
@@ -206,8 +312,14 @@
         const desc = (card.getAttribute("data-desc") || "").toLowerCase();
         const typeMatch = activeType === "all" || type === activeType;
         const textMatch = !query || name.includes(query) || desc.includes(query);
-        card.classList.toggle("hidden", !(typeMatch && textMatch));
+        const show = typeMatch && textMatch;
+        card.classList.toggle("hidden", !show);
+        if (show) card.classList.add("is-shown");
       });
+
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
     }
 
     tabs.forEach((tab) => {
@@ -298,20 +410,10 @@
           const match = panel.getAttribute("data-project-panel") === target;
           panel.classList.toggle("hidden", !match);
         });
-      });
-    });
-  }
 
-  /* --------------------------------------------------------------------------
-   * Value matrix micro-interaction (homepage)
-   * ------------------------------------------------------------------------ */
-  function initValueCards() {
-    document.querySelectorAll("[data-value-card]").forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        card.classList.add("border-amber-500/50");
-      });
-      card.addEventListener("mouseleave", () => {
-        card.classList.remove("border-amber-500/50");
+        if (typeof ScrollTrigger !== "undefined") {
+          ScrollTrigger.refresh();
+        }
       });
     });
   }
@@ -333,12 +435,15 @@
 
   /* Boot */
   document.addEventListener("DOMContentLoaded", () => {
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
     initNav();
+    initMotion();
     initCounters();
     initModals();
     initMaterials();
     initProjectTabs();
-    initValueCards();
     initActivityCards();
   });
 })();

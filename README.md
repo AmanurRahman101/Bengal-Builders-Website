@@ -5,9 +5,9 @@ Premium multi-page static corporate website for **Bengal Builders & Construction
 ## Stack
 
 - Semantic HTML5
-- Tailwind CSS (CDN)
-- Vanilla JavaScript (`js/main.js`)
-- Google Fonts — Montserrat
+- Tailwind CSS (CDN) + shared `css/site.css`
+- Vanilla JavaScript (`js/main.js`) with GSAP + ScrollTrigger
+- Google Fonts — Barlow Condensed (display) + Montserrat (body)
 
 ## Pages
 

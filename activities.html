@@ -7,7 +7,7 @@
   <title>Activities | BBCL — Technical Services Matrix</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,41 +20,23 @@
             steel: "#8A94A6",
             archwhite: "#F8FAFC"
           },
-          fontFamily: { sans: ["Montserrat", "ui-sans-serif", "sans-serif"] }
+          fontFamily: {
+            sans: ["Montserrat", "ui-sans-serif", "sans-serif"],
+            display: ["Barlow Condensed", "Montserrat", "sans-serif"]
+          }
         }
       }
     };
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: Montserrat, ui-sans-serif, sans-serif; background: #111317; color: #F8FAFC; }
-    #site-nav { transition: background-color .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
-    #site-nav.nav-scrolled {
-      background-color: rgba(17, 19, 23, 0.82);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom-color: rgba(245, 158, 11, 0.25);
-    }
-    .page-hero-overlay {
-      background: linear-gradient(120deg, rgba(17,19,23,0.94) 0%, rgba(17,19,23,0.78) 50%, rgba(17,19,23,0.55) 100%);
-    }
-    [data-activity-bar] {
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      [data-activity-bar] { transition: none; }
-    }
-  </style>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/site.css" />
 </head>
 <body class="antialiased">
 
   <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <span class="flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
         <span class="leading-tight">
           <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
           <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
@@ -68,13 +50,13 @@
         <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
       </ul>
       <div class="flex items-center gap-3">
-        <a href="materials.html" class="hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition hover:bg-amber-400">Request Bulk Quote</a>
+        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a>
         <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+    <div id="mobile-menu" class="border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
       <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
         <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
         <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
@@ -95,11 +77,11 @@
       />
       <div class="page-hero-overlay absolute inset-0"></div>
       <div class="relative mx-auto flex min-h-[52vh] max-w-7xl flex-col justify-end px-5 pb-16 lg:px-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Technical Services Matrix</p>
-        <h1 id="act-hero" class="mt-4 max-w-3xl text-4xl font-black uppercase tracking-tight text-archwhite sm:text-5xl">
+        <p data-hero class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Technical Services Matrix</p>
+        <h1 id="act-hero" data-hero class="font-display mt-4 max-w-3xl text-5xl font-bold uppercase tracking-tight text-archwhite sm:text-6xl">
           Engineering Disciplines
         </h1>
-        <p class="mt-4 max-w-2xl text-steel leading-relaxed">
+        <p data-hero class="mt-4 max-w-2xl text-steel leading-relaxed">
           Deep structural capability across foundations, superstructures, finishes, fenestration, MEP, and civil stone works.
         </p>
       </div>
@@ -114,7 +96,7 @@
 
         <div class="mt-14 grid gap-6 lg:grid-cols-2">
           <!-- Foundation Systems -->
-          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+          <article data-activity data-stagger-item class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
             <div class="aspect-[16/9] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
@@ -135,7 +117,7 @@
           </article>
 
           <!-- Superstructures -->
-          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+          <article data-activity data-stagger-item class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
             <div class="aspect-[16/9] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
@@ -155,7 +137,7 @@
           </article>
 
           <!-- Finishes & Fenestration -->
-          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+          <article data-activity data-stagger-item class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
             <div class="aspect-[16/9] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
@@ -177,7 +159,7 @@
           </article>
 
           <!-- MEP & Civil -->
-          <article data-activity class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
+          <article data-activity data-stagger-item class="group relative overflow-hidden border border-white/10 bg-obsidian transition duration-300 hover:border-amber-500/40">
             <div class="aspect-[16/9] overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
@@ -231,8 +213,8 @@
     </div>
     <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
   </footer>
-
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

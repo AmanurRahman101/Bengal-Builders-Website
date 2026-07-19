@@ -1,0 +1,477 @@
+/* Bengal Builders & Construction Ltd. — shared visual system */
+
+:root {
+  --obsidian: #111317;
+  --charcoal: #1a1a1a;
+  --amber: #f59e0b;
+  --amber-hi: #ffb800;
+  --amber-deep: #d97706;
+  --steel: #8a94a6;
+  --archwhite: #f8fafc;
+  --line: rgba(248, 250, 252, 0.1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --nav-h: 4.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(245, 158, 11, 0.08), transparent 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(138, 148, 166, 0.06), transparent 50%),
+    var(--obsidian);
+  color: var(--archwhite);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(245, 158, 11, 0.35);
+  color: var(--archwhite);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: "Barlow Condensed", Montserrat, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Atmosphere                                                                */
+/* -------------------------------------------------------------------------- */
+
+.hero-overlay {
+  background:
+    linear-gradient(105deg, rgba(17, 19, 23, 0.92) 0%, rgba(17, 19, 23, 0.72) 48%, rgba(17, 19, 23, 0.45) 100%),
+    linear-gradient(to top, #111317 0%, transparent 42%);
+}
+
+.page-hero-overlay {
+  background:
+    linear-gradient(120deg, rgba(17, 19, 23, 0.94) 0%, rgba(17, 19, 23, 0.76) 52%, rgba(17, 19, 23, 0.52) 100%),
+    linear-gradient(to top, var(--obsidian) 0%, transparent 45%);
+}
+
+.grid-atmosphere {
+  background-image:
+    linear-gradient(rgba(138, 148, 166, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 148, 166, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 20%, transparent 75%);
+}
+
+.hero-media {
+  transform: scale(1.06);
+  will-change: transform;
+}
+
+.hero-media.is-ready {
+  animation: hero-drift 22s var(--ease-soft) infinite alternate;
+}
+
+@keyframes hero-drift {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to { transform: scale(1.14) translate3d(-1.5%, -1%, 0); }
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--steel);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.scroll-cue__line {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, var(--amber), transparent);
+  transform-origin: top;
+  animation: cue-pulse 1.8s var(--ease-soft) infinite;
+}
+
+@keyframes cue-pulse {
+  0%, 100% { transform: scaleY(0.45); opacity: 0.35; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Navigation                                                                */
+/* -------------------------------------------------------------------------- */
+
+#site-nav {
+  transition:
+    background-color 0.35s var(--ease-soft),
+    border-color 0.35s var(--ease-soft),
+    backdrop-filter 0.35s var(--ease-soft),
+    box-shadow 0.35s var(--ease-soft);
+}
+
+#site-nav.nav-scrolled {
+  background-color: rgba(17, 19, 23, 0.86);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom-color: rgba(245, 158, 11, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+#site-nav a[data-nav] {
+  position: relative;
+  transition: color 0.25s var(--ease-soft);
+}
+
+#site-nav a[data-nav]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+
+#site-nav a[data-nav]:hover::after,
+#site-nav a[data-nav].is-active::after {
+  transform: scaleX(1);
+}
+
+#site-nav a[data-nav].is-active {
+  color: var(--amber-hi);
+}
+
+.brand-mark {
+  transition: border-color 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft), transform 0.3s var(--ease-out);
+}
+
+.group:hover .brand-mark {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.25), 0 8px 24px rgba(245, 158, 11, 0.12);
+  transform: translateY(-1px);
+}
+
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top-color: transparent;
+  pointer-events: none;
+  transition:
+    max-height 0.4s var(--ease-out),
+    opacity 0.3s var(--ease-soft),
+    border-color 0.3s var(--ease-soft);
+}
+
+#mobile-menu.is-open {
+  max-height: 22rem;
+  opacity: 1;
+  border-top-color: rgba(248, 250, 252, 0.1);
+  pointer-events: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Buttons & interactive surfaces                                            */
+/* -------------------------------------------------------------------------- */
+
+.btn-primary,
+.btn-ghost,
+[data-add-quote] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.3s var(--ease-out),
+    background-color 0.25s var(--ease-soft),
+    border-color 0.25s var(--ease-soft),
+    color 0.25s var(--ease-soft),
+    box-shadow 0.3s var(--ease-soft);
+}
+
+.btn-primary,
+[data-add-quote] {
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+}
+
+.btn-primary:hover,
+[data-add-quote]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.28);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 184, 0, 0.7);
+  color: var(--amber-hi);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:active,
+.btn-ghost:active,
+[data-add-quote]:active {
+  transform: translateY(0);
+}
+
+.btn-primary::after,
+.btn-ghost::after,
+[data-add-quote]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.22) 45%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.65s var(--ease-out);
+  z-index: -1;
+}
+
+.btn-primary:hover::after,
+.btn-ghost:hover::after,
+[data-add-quote]:hover::after {
+  transform: translateX(120%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Panels / cards (content interaction surfaces)                             */
+/* -------------------------------------------------------------------------- */
+
+.surface-panel,
+[data-value-card],
+[data-material],
+[data-activity],
+[data-legal-card],
+#equipment-tracker article,
+[data-project-panel] article {
+  transition:
+    transform 0.4s var(--ease-out),
+    border-color 0.35s var(--ease-soft),
+    box-shadow 0.4s var(--ease-soft),
+    background-color 0.35s var(--ease-soft);
+}
+
+.surface-panel:hover,
+[data-value-card]:hover,
+[data-material]:hover,
+[data-activity]:hover,
+[data-legal-card]:hover,
+#equipment-tracker article:hover,
+[data-project-panel] article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(245, 158, 11, 0.08);
+}
+
+[data-value-card] {
+  position: relative;
+}
+
+[data-value-card]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--amber-hi), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s var(--ease-out);
+}
+
+[data-value-card]:hover::before {
+  transform: scaleY(1);
+}
+
+[data-material] .media-frame,
+[data-material] > .aspect-\[4\/3\],
+[data-activity] .aspect-\[16\/10\] {
+  overflow: hidden;
+}
+
+[data-material] img,
+[data-activity] img {
+  transition: transform 0.8s var(--ease-out), filter 0.4s var(--ease-soft);
+}
+
+[data-material]:hover img,
+[data-activity]:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+[data-activity-bar] {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out);
+}
+
+[data-legal-card] {
+  cursor: pointer;
+}
+
+[data-legal-card]:focus-visible {
+  border-color: var(--amber);
+}
+
+input[type="search"],
+input[type="text"] {
+  transition: border-color 0.25s var(--ease-soft), box-shadow 0.25s var(--ease-soft);
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reveal helpers (GSAP sets final state; CSS avoids FOUC)                   */
+/* -------------------------------------------------------------------------- */
+
+/* Only hide for motion when JS is present — keeps content readable if scripts fail */
+html.js:not(.no-motion):not(.reveal-ready) [data-reveal],
+html.js:not(.no-motion):not(.reveal-ready) [data-stagger-item],
+html.js:not(.no-motion):not(.reveal-ready) [data-hero] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: opacity, transform;
+}
+
+html.js [data-reveal].is-shown,
+html.js [data-stagger-item].is-shown {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Modal + toast polish                                                      */
+/* -------------------------------------------------------------------------- */
+
+#legal-modal:not(.hidden) #legal-modal-panel {
+  animation: modal-in 0.35s var(--ease-out) both;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#toast-host > div {
+  border-left: 3px solid var(--amber);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Section accents                                                           */
+/* -------------------------------------------------------------------------- */
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.section-kicker::before {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background: var(--amber);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+}
+
+.stat-glow {
+  text-shadow: 0 0 28px rgba(245, 158, 11, 0.28);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reduced motion                                                            */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-media.is-ready,
+  .scroll-cue__line,
+  #legal-modal:not(.hidden) #legal-modal-panel {
+    animation: none !important;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  [data-add-quote],
+  .surface-panel,
+  [data-value-card],
+  [data-material],
+  [data-activity],
+  [data-legal-card],
+  #equipment-tracker article,
+  [data-project-panel] article,
+  [data-material] img,
+  [data-activity] img,
+  #mobile-menu,
+  #site-nav,
+  #site-nav a[data-nav]::after {
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .btn-primary:hover,
+  .btn-ghost:hover,
+  [data-add-quote]:hover,
+  .surface-panel:hover,
+  [data-value-card]:hover,
+  [data-material]:hover,
+  [data-activity]:hover,
+  [data-legal-card]:hover,
+  #equipment-tracker article:hover,
+  [data-project-panel] article:hover {
+    transform: none;
+  }
+}
