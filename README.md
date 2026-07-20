@@ -41,9 +41,9 @@ Then visit `http://localhost:3000` (or the port shown).
 
 ## Design system
 
-- **Surfaces:** Obsidian `#111317` / Charcoal `#1A1A1A`
-- **Accent:** Safety Amber `#F59E0B` / High-Vis Gold `#FFB800`
-- **Text:** Architectural White `#F8FAFC` / Steel Grey `#8A94A6`
+- **Surfaces:** White `#FFFFFF` / Slate Light `#F8FAFC`
+- **Accent:** Primary Blue `#1E40AF` / Teal `#0D9488`
+- **Text:** Slate `#0F172A` / Slate Muted `#475569`
 
 ## Company
 
