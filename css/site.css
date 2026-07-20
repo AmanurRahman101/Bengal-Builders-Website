@@ -190,20 +190,18 @@ a {
 }
 
 .brand-mark {
-  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-soft);
+  transition: transform 0.3s var(--ease-out), filter 0.3s var(--ease-soft);
   display: block;
   flex-shrink: 0;
 }
 
-.brand-mark img {
-  width: 100%;
-  height: 100%;
+img.brand-mark {
   object-fit: contain;
 }
 
 .group:hover .brand-mark {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.12);
+  transform: translateY(-1px) scale(1.03);
+  filter: drop-shadow(0 8px 16px rgba(30, 64, 175, 0.18));
 }
 
 #mobile-menu {
