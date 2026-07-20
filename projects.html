@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Institutional portfolio ledger — ongoing infrastructure projects and completed capital contracts by BBCL." />
   <title>Projects | BBCL — Institutional Portfolio Ledger</title>
+  <link rel="icon" type="image/png" href="images/bbcl-logo.png" />
+  <link rel="apple-touch-icon" href="images/bbcl-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,11 +16,11 @@
       theme: {
         extend: {
           colors: {
-            obsidian: "#111317",
-            charcoal: "#1A1A1A",
-            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
-            steel: "#8A94A6",
-            archwhite: "#F8FAFC"
+            primary: { DEFAULT: "#1E40AF", dark: "#172554", light: "#3B82F6" },
+            teal: { DEFAULT: "#0D9488", light: "#14B8A6", dark: "#0F766E" },
+            accent: { green: "#16A34A", yellow: "#EAB308", blue: "#38BDF8" },
+            slate: { DEFAULT: "#0F172A", muted: "#475569", light: "#F1F5F9" },
+            border: "#E2E8F0"
           },
           fontFamily: {
             sans: ["Montserrat", "ui-sans-serif", "sans-serif"],
@@ -33,46 +35,46 @@
 </head>
 <body class="antialiased">
 
-  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-obsidian/95 backdrop-blur-md">
-    <div class="border-b border-white/10">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-steel lg:px-8">
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-border bg-white backdrop-blur-md">
+    <div class="border-b border-border">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-slate-muted lg:px-8">
         <span>Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
         <span class="flex items-center gap-4">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </span>
       </div>
     </div>
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <img src="images/bbcl-logo.png" alt="BBCL" class="brand-mark h-10 w-10 object-cover border border-primary/20" width="40" height="40" />
         <span class="leading-tight">
-          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
-          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-slate uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-slate-muted uppercase">Bengal Builders</span>
         </span>
       </a>
       <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
-        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
-        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
-        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
-        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
-        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+        <li><a data-nav href="index.html" class="text-slate-muted transition hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="text-slate-muted transition hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="text-slate-muted transition hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-slate-muted transition hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-slate-muted transition hover:text-teal">Projects</a></li>
       </ul>
       <div class="flex items-center gap-3">
-        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a>
-        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-border text-slate lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobile-menu" class="border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+    <div id="mobile-menu" class="border-t border-border bg-white backdrop-blur-md lg:hidden">
       <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
-        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
-        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
-        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
-        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
-        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
-        <li class="pt-2"><a href="materials.html" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+        <li><a data-nav href="index.html" class="block py-2.5 text-slate-muted hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-slate-muted hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-slate-muted hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-slate-muted hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-slate-muted hover:text-teal">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="inline-flex bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Request Bulk Quote</a></li>
       </ul>
     </div>
   </header>
@@ -86,28 +88,28 @@
       />
       <div class="page-hero-overlay absolute inset-0"></div>
       <div class="relative mx-auto flex min-h-[48vh] max-w-7xl flex-col justify-end px-5 pb-14 lg:px-8">
-        <p data-hero class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Institutional Portfolio Ledger</p>
-        <h1 id="proj-hero" data-hero class="font-display mt-4 max-w-3xl text-5xl font-bold uppercase tracking-tight text-archwhite sm:text-6xl">
+        <p data-hero class="text-xs font-semibold uppercase tracking-[0.3em] text-teal">Institutional Portfolio Ledger</p>
+        <h1 id="proj-hero" data-hero class="font-display mt-4 max-w-3xl text-5xl font-bold uppercase tracking-tight text-slate sm:text-6xl">
           Capital Works Record
         </h1>
-        <p data-hero class="mt-4 max-w-2xl text-steel leading-relaxed">
+        <p data-hero class="mt-4 max-w-2xl text-slate-muted leading-relaxed">
           On-going infrastructure programmes and completed capital contracts delivered under zero-incident field discipline.
         </p>
       </div>
     </section>
 
-    <section class="border-t border-white/5 bg-charcoal py-16 lg:py-20" aria-labelledby="ledger-heading">
+    <section class="border-t border-border bg-slate-light py-16 lg:py-20" aria-labelledby="ledger-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between" data-reveal>
           <div>
-            <h2 id="ledger-heading" class="font-display text-4xl font-bold tracking-tight text-archwhite">Project Ledger</h2>
-            <p class="mt-3 max-w-xl text-sm text-steel">Toggle between active infrastructure delivery and closed capital contracts.</p>
+            <h2 id="ledger-heading" class="font-display text-4xl font-bold tracking-tight text-slate">Project Ledger</h2>
+            <p class="mt-3 max-w-xl text-sm text-slate-muted">Toggle between active infrastructure delivery and closed capital contracts.</p>
           </div>
           <div class="flex flex-wrap gap-3" role="tablist" aria-label="Project status">
-            <button type="button" role="tab" aria-selected="true" data-project-tab="ongoing" class="border border-amber-500 bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian transition">
+            <button type="button" role="tab" aria-selected="true" data-project-tab="ongoing" class="border border-teal bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white transition">
               On-Going Infrastructure (2)
             </button>
-            <button type="button" role="tab" aria-selected="false" data-project-tab="completed" class="border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-steel transition hover:border-amber-500/50 hover:text-archwhite">
+            <button type="button" role="tab" aria-selected="false" data-project-tab="completed" class="border border-border px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-slate-muted transition hover:border-teal hover:text-slate">
               Completed Capital Contracts (10)
             </button>
           </div>
@@ -115,7 +117,7 @@
 
         <!-- On-Going -->
         <div data-project-panel="ongoing" class="mt-12 space-y-6">
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
@@ -123,33 +125,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian">Project A · Active</span>
+              <span class="absolute left-4 top-4 bg-teal px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">Project A · Active</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Re-construction &amp; Repair of Rangpur Pirganj Infrastructure
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Disaster Risk Management Enhancement Project (DRMEP) Component-3 — structural repair and reconstruction of critical local infrastructure in Pirganj, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Programme</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">DRMEP Component-3</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Programme</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">DRMEP Component-3</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 3,97,47,364.58</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 3,97,47,364.58</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Pirganj, Rangpur, Bangladesh</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Pirganj, Rangpur, Bangladesh</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -157,27 +159,27 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 bg-amber-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-obsidian">Project B · Active</span>
+              <span class="absolute left-4 top-4 bg-teal px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">Project B · Active</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Kabilpur &amp; Chattra Union Road Networks
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Union road connectivity with box culverts and palisading earthworks — improving all-weather access and embankment stability.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Scope</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Roads · Box Culverts · Palisading</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Scope</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Roads · Box Culverts · Palisading</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 3,85,38,898.30</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 3,85,38,898.30</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Kabilpur &amp; Chattra Unions</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Kabilpur &amp; Chattra Unions</dd>
                 </div>
               </dl>
             </div>
@@ -186,7 +188,7 @@
 
         <!-- Completed -->
         <div data-project-panel="completed" class="mt-12 hidden space-y-6">
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
@@ -194,53 +196,53 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project C · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project C · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 4-Storied RCC Framework — Institute of Livestock Science Boys Hostel
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Construction of boys hostel of 4-storied building with 6-storied RCC frame structure foundation at ILST Gaibandha. Completed certificate issued at 100% physical and financial progress.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Status</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">100% Value Achieved</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Status</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">100% Value Achieved</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract No</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">01833314026</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract No</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">01833314026</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Final Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 2,96,92,954.21</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Final Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 2,96,92,954.21</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Original Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-steel">BDT 2,72,42,585.16</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Original Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate-muted">BDT 2,72,42,585.16</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">NOA Reference</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">ILST/WD-15/Gai/2019-20/1014 · Dated 27/10/2020</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">NOA Reference</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">ILST/WD-15/Gai/2019-20/1014 · Dated 27/10/2020</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Period</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">40 months · Commenced 09/12/2020 · Completed 08/12/2022</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Period</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">40 months · Commenced 09/12/2020 · Completed 08/12/2022</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Project Director</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Dr. Md. Habibur Rahman</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Project Director</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Dr. Md. Habibur Rahman</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">ILST Gaibandha, Bangladesh</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">ILST Gaibandha, Bangladesh</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80"
@@ -248,33 +250,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project D · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project D · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 60m Long RCC Girder Bridge over Kharubhaj River
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 60-metre RCC girder bridge on UZHQ to Nekirhat Bazar via Horidebpur UPC road over Kharubhaj River at chainage 14+313 km, delivering resilient connectivity for Sadar Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Structure</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">60m RCC Girder Bridge</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Structure</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">60m RCC Girder Bridge</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 7,68,90,580.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 7,68,90,580.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Kharubhaj River, Sadar Upazila, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Kharubhaj River, Sadar Upazila, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
@@ -282,33 +284,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project E · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project E · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Two-Storied Rural Market Building — Bhangagora Hat
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Construction of two-storied rural market building with four-storied foundation in Bhangagora Hat under Gangachhara Upazila, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Structure</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">2-Storied Building · 4-Storied Foundation</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Structure</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">2-Storied Building · 4-Storied Foundation</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 2,60,30,000.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 2,60,30,000.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Bhangagora Hat, Gangachhara Upazila, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Bhangagora Hat, Gangachhara Upazila, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -316,33 +318,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project F · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project F · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Road Improvement Package — Badarganj &amp; Rangpur
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Group of road improvement works including Shahapur Chapra-Uttor Moksadpur Road, Punch Tepoti-Hepamirdha Para Road, and Mathergonj Hat Pucca Road-Dhalaighat Pucca Road via Dilalpur Kachari Road under Badarganj and Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Road IDs</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">185493002, 185034004, 185034058, 185034075</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Road IDs</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">185493002, 185034004, 185034058, 185034075</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 6,70,65,710.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 6,70,65,710.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Badarganj &amp; Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Badarganj &amp; Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
@@ -350,33 +352,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project G · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project G · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Rehabilitation of Baradargha NHW-Bhendabari GC Road
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Rehabilitation of Baradargha NHW-Bhendabari GC Road from chainage 00 m to 10,730 m under Pirganj Upazila, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Road ID</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">185762007</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Road ID</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">185762007</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 15,55,85,410.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 15,55,85,410.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Pirganj, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Pirganj, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -384,33 +386,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project H · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project H · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Improvement of Pirgacha UZHQ-Chowdarani GC Road
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Improvement of Pirgacha UZHQ-Chowdarani GC via Jamirzan Road from chainage 1262 m to 4800 m under Pirgacha Upazila, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Road ID</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">185732007</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Road ID</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">185732007</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 3,55,20,780.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 3,55,20,780.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Pirgacha, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Pirgacha, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -418,33 +420,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project I · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project I · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Improvement of Kaliganj Bazar-Damur Chokla Modhapur Road
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Improvement of Kaliganj Bazar-Damur Chokla Modhapur Road at Nesar Hossain Road from chainage 00 m to 3100 m under Pirgacha Upazila, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Road ID</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">18573316</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Road ID</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">18573316</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 16,71,68,161.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 16,71,68,161.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Pirgacha, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Pirgacha, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -452,33 +454,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project J · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project J · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 Improvement of Tampat UHQ-Sharcartal Bazar Road
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 Improvement of Tampat UHQ-Sharcartal Bazar Road from chainage 1000 m to 2465 m under Rangpur Sadar.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Road ID</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">185493006</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Road ID</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">185493006</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 2,50,50,000.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 2,50,50,000.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Rangpur Sadar, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Rangpur Sadar, Rangpur</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80"
@@ -486,33 +488,33 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project K · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project K · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 IRIDP-2 RCC Girder Bridge — 82.94 m
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 IRIDP-2/RNG/DW-127 — construction of 82.94 m long RCC girder bridge for integrated rural infrastructure development.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Package</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">IRIDP-2/RNG/DW-127</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Package</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">IRIDP-2/RNG/DW-127</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 9,90,10,000.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 9,90,10,000.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Structure</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">82.94 m Long RCC Girder Bridge</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Structure</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">82.94 m Long RCC Girder Bridge</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article class="surface-panel grid overflow-hidden border border-white/10 bg-obsidian lg:grid-cols-12">
+          <article class="surface-panel grid overflow-hidden border border-border bg-white lg:grid-cols-12">
             <div class="relative lg:col-span-4">
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
@@ -520,27 +522,27 @@
                 class="h-56 w-full object-cover lg:h-full"
                 loading="lazy"
               />
-              <span class="absolute left-4 top-4 border border-amber-500/50 bg-obsidian/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-400">Project L · Completed</span>
+              <span class="absolute left-4 top-4 border border-teal bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-teal">Project L · Completed</span>
             </div>
             <div class="p-7 lg:col-span-8 lg:p-9">
-              <h3 class="text-xl font-extrabold text-archwhite sm:text-2xl">
+              <h3 class="text-xl font-extrabold text-slate sm:text-2xl">
                 RDRIIP Road Improvement — Khairjuma Bazar to Chiklirhat R&amp;H
               </h3>
-              <p class="mt-3 text-sm leading-relaxed text-steel">
+              <p class="mt-3 text-sm leading-relaxed text-slate-muted">
                 RDRIIP/RAN/UN-337 improvement of NHW Khairjuma Bazar-Chiklirhat R&amp;H Alampur UP Office Road from chainage 3550 m to 4050 m under Taraganj Upazila, Rangpur.
               </p>
               <dl class="mt-6 grid gap-4 sm:grid-cols-2">
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Package</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">RDRIIP/RAN/UN-337</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Package</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">RDRIIP/RAN/UN-337</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Contract Value</dt>
-                  <dd class="mt-1 text-sm font-semibold text-amber-400">BDT 12,50,00,000.00</dd>
+                <div class="border-t border-border pt-4">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Contract Value</dt>
+                  <dd class="mt-1 text-sm font-semibold text-teal">BDT 12,50,00,000.00</dd>
                 </div>
-                <div class="border-t border-white/10 pt-4 sm:col-span-2">
-                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-steel">Location</dt>
-                  <dd class="mt-1 text-sm font-semibold text-archwhite">Taraganj, Rangpur</dd>
+                <div class="border-t border-border pt-4 sm:col-span-2">
+                  <dt class="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-muted">Location</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate">Taraganj, Rangpur</dd>
                 </div>
               </dl>
             </div>
@@ -550,33 +552,36 @@
     </section>
   </main>
 
-  <footer class="border-t border-white/10 bg-obsidian">
+  <footer class="border-t border-border bg-white">
     <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
       <div>
-        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
-        <p class="mt-2 max-w-sm text-sm text-steel">Institutional portfolio of infrastructure and capital works.</p>
+        <div class="flex items-center gap-3">
+          <img src="images/bbcl-logo.png" alt="BBCL logo" class="h-12 w-12 object-cover border border-teal/40" width="48" height="48" />
+          <p class="text-sm font-extrabold tracking-[0.2em] text-slate uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        </div>
+        <p class="mt-3 max-w-sm text-sm text-slate-muted">Institutional portfolio of infrastructure and capital works.</p>
       </div>
-      <div class="text-sm text-steel">
-        <p class="font-semibold text-archwhite">Headquarters</p>
+      <div class="text-sm text-slate-muted">
+        <p class="font-semibold text-slate">Headquarters</p>
         <p class="mt-2">Pritom Zaman Tower (13th Floor)</p>
         <p>37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
         <p class="mt-2">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
         </p>
         <p>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </p>
         <p class="mt-1">Established June 2021</p>
       </div>
       <nav aria-label="Footer">
-        <ul class="flex flex-col gap-2 text-sm text-steel">
-          <li><a href="index.html" class="hover:text-amber-400">Home</a></li>
-          <li><a href="materials.html" class="hover:text-amber-400">Materials</a></li>
-          <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+        <ul class="flex flex-col gap-2 text-sm text-slate-muted">
+          <li><a href="index.html" class="hover:text-teal">Home</a></li>
+          <li><a href="materials.html" class="hover:text-teal">Materials</a></li>
+          <li><a href="about.html" class="hover:text-teal">About</a></li>
         </ul>
       </nav>
     </div>
-    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+    <div class="border-t border-border py-5 text-center text-xs text-slate-muted">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>

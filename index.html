@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bengal Builders & Construction Ltd. (BBCL) — Architecting Bangladesh's Horizon with zero-incident engineering precision." />
   <title>BBCL | Bengal Builders & Construction Ltd.</title>
+  <link rel="icon" type="image/png" href="images/bbcl-logo.png" />
+  <link rel="apple-touch-icon" href="images/bbcl-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,11 +16,11 @@
       theme: {
         extend: {
           colors: {
-            obsidian: "#111317",
-            charcoal: "#1A1A1A",
-            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
-            steel: "#8A94A6",
-            archwhite: "#F8FAFC"
+            primary: { DEFAULT: "#1E40AF", dark: "#172554", light: "#3B82F6" },
+            teal: { DEFAULT: "#0D9488", light: "#14B8A6", dark: "#0F766E" },
+            accent: { green: "#16A34A", yellow: "#EAB308", blue: "#38BDF8" },
+            slate: { DEFAULT: "#0F172A", muted: "#475569", light: "#F1F5F9" },
+            border: "#E2E8F0"
           },
           fontFamily: {
             sans: ["Montserrat", "ui-sans-serif", "sans-serif"],
@@ -34,51 +36,51 @@
 <body class="antialiased">
 
   <!-- Navigation -->
-  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-obsidian/95 backdrop-blur-md">
-    <div class="border-b border-white/10">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-steel lg:px-8">
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-border bg-white backdrop-blur-md">
+    <div class="border-b border-border">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-slate-muted lg:px-8">
         <span>Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
         <span class="flex items-center gap-4">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </span>
       </div>
     </div>
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <img src="images/bbcl-logo.png" alt="BBCL" class="brand-mark h-10 w-10 object-cover border border-primary/20" width="40" height="40" />
         <span class="leading-tight">
-          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
-          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-slate uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-slate-muted uppercase">Bengal Builders</span>
         </span>
       </a>
 
       <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
-        <li><a data-nav href="index.html" class="text-steel">Home</a></li>
-        <li><a data-nav href="about.html" class="text-steel">About</a></li>
-        <li><a data-nav href="activities.html" class="text-steel">Activities</a></li>
-        <li><a data-nav href="materials.html" class="text-steel">Materials</a></li>
-        <li><a data-nav href="projects.html" class="text-steel">Projects</a></li>
+        <li><a data-nav href="index.html" class="text-slate-muted">Home</a></li>
+        <li><a data-nav href="about.html" class="text-slate-muted">About</a></li>
+        <li><a data-nav href="activities.html" class="text-slate-muted">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-slate-muted">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-slate-muted">Projects</a></li>
       </ul>
 
       <div class="flex items-center gap-3">
-        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">
+        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">
           Request Bulk Quote
         </a>
-        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-border text-slate lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <div id="mobile-menu" class="border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+    <div id="mobile-menu" class="border-t border-border bg-white backdrop-blur-md lg:hidden">
       <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
-        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
-        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
-        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
-        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
-        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
-        <li class="pt-2"><a href="materials.html" class="btn-primary inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+        <li><a data-nav href="index.html" class="block py-2.5 text-slate-muted hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-slate-muted hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-slate-muted hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-slate-muted hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-slate-muted hover:text-teal">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="btn-primary inline-flex bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Request Bulk Quote</a></li>
       </ul>
     </div>
   </header>
@@ -96,16 +98,16 @@
       <div class="grid-atmosphere absolute inset-0 opacity-40"></div>
 
       <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-28 pt-32 lg:justify-center lg:px-8 lg:pb-24 lg:pt-28">
-        <p data-hero class="text-xs font-semibold uppercase tracking-[0.35em] text-amber-400">Bengal Builders &amp; Construction Ltd.</p>
-        <h1 id="hero-heading" data-hero class="font-display mt-5 max-w-4xl text-5xl font-bold uppercase leading-[0.92] tracking-tight text-archwhite sm:text-6xl md:text-7xl lg:text-8xl">
-          Architecting<br />Bangladesh's<br /><span class="text-amber-400">Horizon</span>
+        <p data-hero class="text-xs font-semibold uppercase tracking-[0.35em] text-teal">Bengal Builders &amp; Construction Ltd.</p>
+        <h1 id="hero-heading" data-hero class="font-display mt-5 max-w-4xl text-5xl font-bold uppercase leading-[0.92] tracking-tight text-slate sm:text-6xl md:text-7xl lg:text-8xl">
+          Architecting<br />Bangladesh's<br /><span class="text-teal">Horizon</span>
         </h1>
-        <p data-hero class="mt-6 max-w-xl text-base leading-relaxed text-steel sm:text-lg">
+        <p data-hero class="mt-6 max-w-xl text-base leading-relaxed text-slate-muted sm:text-lg">
           Engineering precision and an uncompromised zero-incident safety track record — from foundation systems to capital infrastructure across Bangladesh.
         </p>
         <div data-hero class="mt-10 flex flex-wrap gap-4">
-          <a href="materials.html" class="btn-primary inline-flex items-center bg-amber-500 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-obsidian">Explore Materials</a>
-          <a href="projects.html" class="btn-ghost inline-flex items-center border border-archwhite/30 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-archwhite">View Projects</a>
+          <a href="materials.html" class="btn-primary inline-flex items-center bg-teal px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white">Explore Materials</a>
+          <a href="projects.html" class="btn-ghost inline-flex items-center border border-slate-300 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-slate">View Projects</a>
         </div>
       </div>
 
@@ -116,25 +118,25 @@
     </section>
 
     <!-- Vision & Mission -->
-    <section class="relative border-t border-white/5 bg-obsidian py-20 lg:py-28" aria-labelledby="vision-heading">
+    <section class="relative border-t border-border bg-white py-20 lg:py-28" aria-labelledby="vision-heading">
       <div class="absolute inset-0 grid-atmosphere opacity-25"></div>
       <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-2">
           <div data-reveal>
-            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Vision</p>
-            <h2 id="vision-heading" class="font-display mt-3 text-3xl font-bold tracking-tight text-archwhite sm:text-4xl">
+            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Vision</p>
+            <h2 id="vision-heading" class="font-display mt-3 text-3xl font-bold tracking-tight text-slate sm:text-4xl">
               Responsible premier engineering
             </h2>
-            <p class="mt-5 text-steel leading-relaxed">
+            <p class="mt-5 text-slate-muted leading-relaxed">
               To be the most responsible premier engineering and construction company where the customers and the partners are integral part of success of the company.
             </p>
           </div>
           <div data-reveal>
-            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Mission</p>
-            <h2 class="font-display mt-3 text-3xl font-bold tracking-tight text-archwhite sm:text-4xl">
+            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Mission</p>
+            <h2 class="font-display mt-3 text-3xl font-bold tracking-tight text-slate sm:text-4xl">
               Zero-incident workplace
             </h2>
-            <p class="mt-5 text-steel leading-relaxed">
+            <p class="mt-5 text-slate-muted leading-relaxed">
               We pledge to protect the health, safety and welfare of each other through the achievement of a zero-incident work place by working together.
             </p>
           </div>
@@ -143,63 +145,63 @@
     </section>
 
     <!-- Core Value Matrix -->
-    <section class="relative border-t border-white/5 bg-charcoal/80 py-20 lg:py-28" aria-labelledby="values-heading">
+    <section class="relative border-t border-border bg-slate-light py-20 lg:py-28" aria-labelledby="values-heading">
       <div class="absolute inset-0 grid-atmosphere opacity-30"></div>
       <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div class="max-w-2xl" data-reveal>
-          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Core Value Matrix</p>
-          <h2 id="values-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">
+          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Core Value Matrix</p>
+          <h2 id="values-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">
             Load-bearing principles of BBCL
           </h2>
-          <p class="mt-4 text-steel leading-relaxed">
+          <p class="mt-4 text-slate-muted leading-relaxed">
             The values that guide every project, relationship, and decision at Bengal Builders &amp; Construction Ltd.
           </p>
         </div>
 
         <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
-          <article data-value-card data-stagger-item class="border border-white/10 bg-obsidian/60 p-7">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">01</span>
-            <h3 class="mt-4 text-lg font-bold text-archwhite">Team Work</h3>
-            <p class="mt-2 text-sm leading-relaxed text-steel">We recognize people as our primary asset, providing opportunities for our people to reach their full potential while working with clients as one team.</p>
+          <article data-value-card data-stagger-item class="border border-border bg-white p-7">
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">01</span>
+            <h3 class="mt-4 text-lg font-bold text-slate">Team Work</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-muted">We recognize people as our primary asset, providing opportunities for our people to reach their full potential while working with clients as one team.</p>
           </article>
-          <article data-value-card data-stagger-item class="border border-white/10 bg-obsidian/60 p-7">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">02</span>
-            <h3 class="mt-4 text-lg font-bold text-archwhite">Commitment &amp; Honesty</h3>
-            <p class="mt-2 text-sm leading-relaxed text-steel">Total commitment to clients and colleagues, built on trust, openness, and mutual respect in every contract and relationship.</p>
+          <article data-value-card data-stagger-item class="border border-border bg-white p-7">
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">02</span>
+            <h3 class="mt-4 text-lg font-bold text-slate">Commitment &amp; Honesty</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-muted">Total commitment to clients and colleagues, built on trust, openness, and mutual respect in every contract and relationship.</p>
           </article>
-          <article data-value-card data-stagger-item class="border border-white/10 bg-obsidian/60 p-7">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">03</span>
-            <h3 class="mt-4 text-lg font-bold text-archwhite">Confidence</h3>
-            <p class="mt-2 text-sm leading-relaxed text-steel">Standing up for what we believe in, pursuing goals passionately, and daring to challenge norms with resilient engineering judgment.</p>
+          <article data-value-card data-stagger-item class="border border-border bg-white p-7">
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">03</span>
+            <h3 class="mt-4 text-lg font-bold text-slate">Confidence</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-muted">Standing up for what we believe in, pursuing goals passionately, and daring to challenge norms with resilient engineering judgment.</p>
           </article>
-          <article data-value-card data-stagger-item class="border border-white/10 bg-obsidian/60 p-7">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">04</span>
-            <h3 class="mt-4 text-lg font-bold text-archwhite">Respect</h3>
-            <p class="mt-2 text-sm leading-relaxed text-steel">Recognizing and respecting the diversity and needs of our people and partners through transparent, constructive interaction.</p>
+          <article data-value-card data-stagger-item class="border border-border bg-white p-7">
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">04</span>
+            <h3 class="mt-4 text-lg font-bold text-slate">Respect</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-muted">Recognizing and respecting the diversity and needs of our people and partners through transparent, constructive interaction.</p>
           </article>
-          <article data-value-card data-stagger-item class="border border-amber-500/30 bg-obsidian/80 p-7">
-            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">05</span>
-            <h3 class="mt-4 text-lg font-bold text-archwhite">Integrity</h3>
-            <p class="mt-2 text-sm leading-relaxed text-steel">Remaining true to founding values of quality, honesty, and hard work. We do the right thing without compromise.</p>
+          <article data-value-card data-stagger-item class="border border-teal/30 bg-slate-light p-7">
+            <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">05</span>
+            <h3 class="mt-4 text-lg font-bold text-slate">Integrity</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-muted">Remaining true to founding values of quality, honesty, and hard work. We do the right thing without compromise.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Live Equipment Tracker -->
-    <section id="equipment-tracker" class="relative border-t border-white/5 bg-obsidian py-20 lg:py-28" aria-labelledby="fleet-heading">
+    <section id="equipment-tracker" class="relative border-t border-border bg-white py-20 lg:py-28" aria-labelledby="fleet-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between" data-reveal>
           <div class="max-w-2xl">
-            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Live Equipment Tracker</p>
-            <h2 id="fleet-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">
+            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Live Equipment Tracker</p>
+            <h2 id="fleet-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">
               Fleet strength on the ground
             </h2>
-            <p class="mt-4 text-steel leading-relaxed">
+            <p class="mt-4 text-slate-muted leading-relaxed">
               Precision survey instruments, heavy earthmoving plant, and formwork systems ready for institutional-scale deployment.
             </p>
           </div>
-          <div class="hidden overflow-hidden border border-white/10 lg:block">
+          <div class="hidden overflow-hidden border border-border lg:block">
             <img
               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=640&q=80"
               alt="Excavator operating on a construction site"
@@ -209,124 +211,124 @@
         </div>
 
         <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-stagger>
-          <article data-stagger-item class="border border-white/10 bg-charcoal p-8">
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-steel">Survey Control</p>
-            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-amber-400"><span data-count="2" data-duration="1200">0</span><span class="text-2xl text-archwhite">×</span></p>
-            <p class="mt-3 text-sm font-semibold text-archwhite">Total Stations</p>
-            <p class="mt-1 text-xs text-steel">High-accuracy layout &amp; as-built control</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-8">
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-muted">Survey Control</p>
+            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-teal"><span data-count="2" data-duration="1200">0</span><span class="text-2xl text-slate">×</span></p>
+            <p class="mt-3 text-sm font-semibold text-slate">Total Stations</p>
+            <p class="mt-1 text-xs text-slate-muted">High-accuracy layout &amp; as-built control</p>
           </article>
-          <article data-stagger-item class="border border-white/10 bg-charcoal p-8">
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-steel">Earthmoving</p>
-            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-amber-400"><span data-count="1" data-duration="1000">0</span><span class="text-2xl text-archwhite">×</span></p>
-            <p class="mt-3 text-sm font-semibold text-archwhite">CAT-320D Excavator</p>
-            <p class="mt-1 text-xs text-steel">Heavy excavation &amp; trench works</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-8">
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-muted">Earthmoving</p>
+            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-teal"><span data-count="1" data-duration="1000">0</span><span class="text-2xl text-slate">×</span></p>
+            <p class="mt-3 text-sm font-semibold text-slate">CAT-320D Excavator</p>
+            <p class="mt-1 text-xs text-slate-muted">Heavy excavation &amp; trench works</p>
           </article>
-          <article data-stagger-item class="border border-white/10 bg-charcoal p-8">
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-steel">Dewatering</p>
-            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-amber-400"><span data-count="6" data-duration="1400">0</span><span class="text-2xl text-archwhite">×</span></p>
-            <p class="mt-3 text-sm font-semibold text-archwhite">Heavy Water Pumps</p>
-            <p class="mt-1 text-xs text-steel">Basement &amp; flood-risk mitigation</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-8">
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-muted">Dewatering</p>
+            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-teal"><span data-count="6" data-duration="1400">0</span><span class="text-2xl text-slate">×</span></p>
+            <p class="mt-3 text-sm font-semibold text-slate">Heavy Water Pumps</p>
+            <p class="mt-1 text-xs text-slate-muted">Basement &amp; flood-risk mitigation</p>
           </article>
-          <article data-stagger-item class="border border-white/10 bg-charcoal p-8">
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-steel">Formwork</p>
-            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-amber-400"><span data-count="1200" data-duration="1800">0</span></p>
-            <p class="mt-3 text-sm font-semibold text-archwhite">sqm Steel Shuttering</p>
-            <p class="mt-1 text-xs text-steel">Repeatable RCC casting systems</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-8">
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-muted">Formwork</p>
+            <p class="stat-glow mt-5 text-5xl font-black tabular-nums text-teal"><span data-count="1200" data-duration="1800">0</span></p>
+            <p class="mt-3 text-sm font-semibold text-slate">sqm Steel Shuttering</p>
+            <p class="mt-1 text-xs text-slate-muted">Repeatable RCC casting systems</p>
           </article>
         </div>
 
-        <div class="mt-16 overflow-hidden border border-white/10" data-reveal>
+        <div class="mt-16 overflow-hidden border border-border" data-reveal>
           <table class="w-full text-sm">
-            <thead class="bg-obsidian text-left">
+            <thead class="bg-white text-left">
               <tr>
-                <th class="px-6 py-4 text-xs font-bold uppercase tracking-[0.14em] text-amber-400">Equipment Name</th>
-                <th class="px-6 py-4 text-right text-xs font-bold uppercase tracking-[0.14em] text-amber-400">Quantity</th>
+                <th class="px-6 py-4 text-xs font-bold uppercase tracking-[0.14em] text-teal">Equipment Name</th>
+                <th class="px-6 py-4 text-right text-xs font-bold uppercase tracking-[0.14em] text-teal">Quantity</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-white/10">
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Total Station</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 set</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Total Station</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 set</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Level Machine</td>
-                <td class="px-6 py-3.5 text-right text-steel">1 set</td>
+                <td class="px-6 py-3.5 text-slate">Level Machine</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1 set</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Excavator (CAT-320D)</td>
-                <td class="px-6 py-3.5 text-right text-steel">1 no.</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-3.5 text-archwhite">Generator (5 kVA, 10 kVA &amp; 25 kVA)</td>
-                <td class="px-6 py-3.5 text-right text-steel">3 nos.</td>
-              </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Concrete Mixture Machine</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 nos.</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Excavator (CAT-320D)</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1 no.</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Water Pump (Electric &amp; Diesel)</td>
-                <td class="px-6 py-3.5 text-right text-steel">6 nos.</td>
+                <td class="px-6 py-3.5 text-slate">Generator (5 kVA, 10 kVA &amp; 25 kVA)</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">3 nos.</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Submersible Pump</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 nos.</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-3.5 text-archwhite">Concrete Planer</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 no.</td>
-              </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Welding Machine</td>
-                <td class="px-6 py-3.5 text-right text-steel">10 set</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Concrete Mixture Machine</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 nos.</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Vibratory Machine (Electric &amp; Diesel)</td>
-                <td class="px-6 py-3.5 text-right text-steel">6 nos.</td>
+                <td class="px-6 py-3.5 text-slate">Water Pump (Electric &amp; Diesel)</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">6 nos.</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">High Speed Cutter</td>
-                <td class="px-6 py-3.5 text-right text-steel">5 nos.</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-3.5 text-archwhite">Grinding Machine</td>
-                <td class="px-6 py-3.5 text-right text-steel">5 nos.</td>
-              </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Soil Compactor</td>
-                <td class="px-6 py-3.5 text-right text-steel">1 no.</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Submersible Pump</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 nos.</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Gas Cutter Set</td>
-                <td class="px-6 py-3.5 text-right text-steel">1 set</td>
+                <td class="px-6 py-3.5 text-slate">Concrete Planer</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 no.</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Chain Koppa</td>
-                <td class="px-6 py-3.5 text-right text-steel">1 no.</td>
-              </tr>
-              <tr>
-                <td class="px-6 py-3.5 text-archwhite">Steel Shuttering Materials</td>
-                <td class="px-6 py-3.5 text-right text-steel">1200 sqm</td>
-              </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Hammer Drill</td>
-                <td class="px-6 py-3.5 text-right text-steel">3 no.</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Welding Machine</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">10 set</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Stand Drill Machine</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 no.</td>
+                <td class="px-6 py-3.5 text-slate">Vibratory Machine (Electric &amp; Diesel)</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">6 nos.</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Tool Box</td>
-                <td class="px-6 py-3.5 text-right text-steel">4 set</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">High Speed Cutter</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">5 nos.</td>
               </tr>
               <tr>
-                <td class="px-6 py-3.5 text-archwhite">Chain Pulley Box</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 nos.</td>
+                <td class="px-6 py-3.5 text-slate">Grinding Machine</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">5 nos.</td>
               </tr>
-              <tr class="bg-charcoal/50">
-                <td class="px-6 py-3.5 text-archwhite">Hydraulic Jack</td>
-                <td class="px-6 py-3.5 text-right text-steel">2 nos.</td>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Soil Compactor</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1 no.</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-slate">Gas Cutter Set</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1 set</td>
+              </tr>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Chain Koppa</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1 no.</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-slate">Steel Shuttering Materials</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">1200 sqm</td>
+              </tr>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Hammer Drill</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">3 no.</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-slate">Stand Drill Machine</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 no.</td>
+              </tr>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Tool Box</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">4 set</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3.5 text-slate">Chain Pulley Box</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 nos.</td>
+              </tr>
+              <tr class="bg-slate-light/50">
+                <td class="px-6 py-3.5 text-slate">Hydraulic Jack</td>
+                <td class="px-6 py-3.5 text-right text-slate-muted">2 nos.</td>
               </tr>
             </tbody>
           </table>
@@ -335,53 +337,56 @@
     </section>
 
     <!-- CTA band -->
-    <section class="relative overflow-hidden border-t border-white/5 py-20" aria-labelledby="cta-heading">
+    <section class="relative overflow-hidden border-t border-border py-20" aria-labelledby="cta-heading">
       <img
         src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80"
         alt="Modern architectural glass and steel facade"
         class="absolute inset-0 h-full w-full object-cover opacity-30"
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/90 to-obsidian/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/90 to-primary-dark/70"></div>
       <div class="relative mx-auto max-w-7xl px-5 lg:px-8" data-reveal>
-        <h2 id="cta-heading" class="font-display max-w-xl text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">
+        <h2 id="cta-heading" class="font-display max-w-xl text-4xl font-bold tracking-tight text-slate sm:text-5xl">
           Ready to specify aggregates or review capital works?
         </h2>
-        <p class="mt-4 max-w-lg text-steel">Established June 2021 · Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
+        <p class="mt-4 max-w-lg text-slate-muted">Established June 2021 · Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="about.html" class="btn-primary inline-flex bg-amber-500 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-obsidian">Corporate Identity</a>
-          <a href="activities.html" class="btn-ghost inline-flex border border-white/25 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-archwhite">Technical Services</a>
+          <a href="about.html" class="btn-primary inline-flex bg-teal px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white">Corporate Identity</a>
+          <a href="activities.html" class="btn-ghost inline-flex border border-slate-300 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-slate">Technical Services</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 bg-charcoal">
+  <footer class="border-t border-border bg-slate-light">
     <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
       <div>
-        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
-        <p class="mt-2 max-w-sm text-sm text-steel">Zero-incident workplace through teamwork, total commitment, extreme engineering precision, and advanced structural technology.</p>
+        <div class="flex items-center gap-3">
+          <img src="images/bbcl-logo.png" alt="BBCL logo" class="h-12 w-12 object-cover border border-teal/40" width="48" height="48" />
+          <p class="text-sm font-extrabold tracking-[0.2em] text-slate uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        </div>
+        <p class="mt-3 max-w-sm text-sm text-slate-muted">Zero-incident workplace through teamwork, total commitment, extreme engineering precision, and advanced structural technology.</p>
       </div>
-      <div class="text-sm text-steel">
-        <p class="font-semibold text-archwhite">Headquarters</p>
+      <div class="text-sm text-slate-muted">
+        <p class="font-semibold text-slate">Headquarters</p>
         <p class="mt-2">Pritom Zaman Tower (13th Floor)</p>
         <p>37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
         <p class="mt-2">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
         </p>
         <p>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </p>
         <p class="mt-1">Established June 2021</p>
       </div>
       <nav aria-label="Footer">
-        <ul class="flex flex-col gap-2 text-sm text-steel">
-          <li><a href="about.html" class="transition hover:text-amber-400">About</a></li>
-          <li><a href="materials.html" class="transition hover:text-amber-400">Materials</a></li>
-          <li><a href="projects.html" class="transition hover:text-amber-400">Projects</a></li>
+        <ul class="flex flex-col gap-2 text-sm text-slate-muted">
+          <li><a href="about.html" class="transition hover:text-teal">About</a></li>
+          <li><a href="materials.html" class="transition hover:text-teal">Materials</a></li>
+          <li><a href="projects.html" class="transition hover:text-teal">Projects</a></li>
         </ul>
       </nav>
     </div>
-    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">
+    <div class="border-t border-border py-5 text-center text-xs text-slate-muted">
       © <span id="year"></span> Bengal Builders &amp; Construction Ltd. All rights reserved.
     </div>
   </footer>

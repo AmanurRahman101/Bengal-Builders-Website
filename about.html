@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Corporate identity, leadership, engineering registry, and legal compliance vault for Bengal Builders & Construction Ltd." />
   <title>About | BBCL — Bengal Builders & Construction Ltd.</title>
+  <link rel="icon" type="image/png" href="images/bbcl-logo.png" />
+  <link rel="apple-touch-icon" href="images/bbcl-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,11 +16,11 @@
       theme: {
         extend: {
           colors: {
-            obsidian: "#111317",
-            charcoal: "#1A1A1A",
-            amber: { 400: "#FFB800", 500: "#F59E0B", 600: "#D97706" },
-            steel: "#8A94A6",
-            archwhite: "#F8FAFC"
+            primary: { DEFAULT: "#1E40AF", dark: "#172554", light: "#3B82F6" },
+            teal: { DEFAULT: "#0D9488", light: "#14B8A6", dark: "#0F766E" },
+            accent: { green: "#16A34A", yellow: "#EAB308", blue: "#38BDF8" },
+            slate: { DEFAULT: "#0F172A", muted: "#475569", light: "#F1F5F9" },
+            border: "#E2E8F0"
           },
           fontFamily: {
             sans: ["Montserrat", "ui-sans-serif", "sans-serif"],
@@ -33,46 +35,46 @@
 </head>
 <body class="antialiased">
 
-  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-obsidian/95 backdrop-blur-md">
-    <div class="border-b border-white/10">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-steel lg:px-8">
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-border bg-white backdrop-blur-md">
+    <div class="border-b border-border">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-2 text-[11px] text-slate-muted lg:px-8">
         <span>Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
         <span class="flex items-center gap-4">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </span>
       </div>
     </div>
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <span class="brand-mark flex h-10 w-10 items-center justify-center border border-amber-500/60 bg-charcoal text-xs font-black tracking-tighter text-amber-400">BB</span>
+        <img src="images/bbcl-logo.png" alt="BBCL" class="brand-mark h-10 w-10 object-cover border border-primary/20" width="40" height="40" />
         <span class="leading-tight">
-          <span class="block text-sm font-extrabold tracking-[0.18em] text-archwhite uppercase">BBCL</span>
-          <span class="block text-[10px] font-medium tracking-[0.12em] text-steel uppercase">Bengal Builders</span>
+          <span class="block text-sm font-extrabold tracking-[0.18em] text-slate uppercase">BBCL</span>
+          <span class="block text-[10px] font-medium tracking-[0.12em] text-slate-muted uppercase">Bengal Builders</span>
         </span>
       </a>
       <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
-        <li><a data-nav href="index.html" class="text-steel transition hover:text-amber-400">Home</a></li>
-        <li><a data-nav href="about.html" class="text-steel transition hover:text-amber-400">About</a></li>
-        <li><a data-nav href="activities.html" class="text-steel transition hover:text-amber-400">Activities</a></li>
-        <li><a data-nav href="materials.html" class="text-steel transition hover:text-amber-400">Materials</a></li>
-        <li><a data-nav href="projects.html" class="text-steel transition hover:text-amber-400">Projects</a></li>
+        <li><a data-nav href="index.html" class="text-slate-muted transition hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="text-slate-muted transition hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="text-slate-muted transition hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-slate-muted transition hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-slate-muted transition hover:text-teal">Projects</a></li>
       </ul>
       <div class="flex items-center gap-3">
-        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a>
-        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/15 text-archwhite lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+        <a href="materials.html" class="btn-primary hidden sm:inline-flex items-center bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Request Bulk Quote</a>
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-border text-slate lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
-    <div id="mobile-menu" class="border-t border-white/10 bg-obsidian/95 backdrop-blur-md lg:hidden">
+    <div id="mobile-menu" class="border-t border-border bg-white backdrop-blur-md lg:hidden">
       <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
-        <li><a data-nav href="index.html" class="block py-2.5 text-steel hover:text-amber-400">Home</a></li>
-        <li><a data-nav href="about.html" class="block py-2.5 text-steel hover:text-amber-400">About</a></li>
-        <li><a data-nav href="activities.html" class="block py-2.5 text-steel hover:text-amber-400">Activities</a></li>
-        <li><a data-nav href="materials.html" class="block py-2.5 text-steel hover:text-amber-400">Materials</a></li>
-        <li><a data-nav href="projects.html" class="block py-2.5 text-steel hover:text-amber-400">Projects</a></li>
-        <li class="pt-2"><a href="materials.html" class="inline-flex bg-amber-500 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-obsidian">Request Bulk Quote</a></li>
+        <li><a data-nav href="index.html" class="block py-2.5 text-slate-muted hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="block py-2.5 text-slate-muted hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="block py-2.5 text-slate-muted hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="block py-2.5 text-slate-muted hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="block py-2.5 text-slate-muted hover:text-teal">Projects</a></li>
+        <li class="pt-2"><a href="materials.html" class="inline-flex bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Request Bulk Quote</a></li>
       </ul>
     </div>
   </header>
@@ -87,35 +89,35 @@
       />
       <div class="page-hero-overlay absolute inset-0"></div>
       <div class="relative mx-auto flex min-h-[52vh] max-w-7xl flex-col justify-end px-5 pb-16 lg:px-8">
-        <p data-hero class="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Corporate Identity</p>
-        <h1 id="about-hero" data-hero class="font-display mt-4 max-w-3xl text-5xl font-bold uppercase tracking-tight text-archwhite sm:text-6xl">
+        <p data-hero class="text-xs font-semibold uppercase tracking-[0.3em] text-teal">Corporate Identity</p>
+        <h1 id="about-hero" data-hero class="font-display mt-4 max-w-3xl text-5xl font-bold uppercase tracking-tight text-slate sm:text-6xl">
           Legal Transparency &amp; Leadership
         </h1>
-        <p data-hero class="mt-4 max-w-2xl text-steel leading-relaxed">
+        <p data-hero class="mt-4 max-w-2xl text-slate-muted leading-relaxed">
           Bengal Builders &amp; Construction Ltd. — established June 2021 at Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000 — builds with institutional accountability from boardroom to basemat.
         </p>
       </div>
     </section>
 
     <!-- Vision & Mission -->
-    <section class="border-t border-white/5 bg-obsidian py-20 lg:py-24" aria-labelledby="vision-heading">
+    <section class="border-t border-border bg-white py-20 lg:py-24" aria-labelledby="vision-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-2">
           <div data-reveal>
-            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Vision</p>
-            <h2 id="vision-heading" class="font-display mt-3 text-3xl font-bold tracking-tight text-archwhite sm:text-4xl">
+            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Vision</p>
+            <h2 id="vision-heading" class="font-display mt-3 text-3xl font-bold tracking-tight text-slate sm:text-4xl">
               Responsible premier engineering
             </h2>
-            <p class="mt-5 text-steel leading-relaxed">
+            <p class="mt-5 text-slate-muted leading-relaxed">
               To be the most responsible premier engineering and construction company where the customers and the partners are integral part of success of the company.
             </p>
           </div>
           <div data-reveal>
-            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Mission</p>
-            <h2 class="font-display mt-3 text-3xl font-bold tracking-tight text-archwhite sm:text-4xl">
+            <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Mission</p>
+            <h2 class="font-display mt-3 text-3xl font-bold tracking-tight text-slate sm:text-4xl">
               Zero-incident workplace
             </h2>
-            <p class="mt-5 text-steel leading-relaxed">
+            <p class="mt-5 text-slate-muted leading-relaxed">
               We pledge to protect the health, safety and welfare of each other through the achievement of a zero-incident work place by working together.
             </p>
           </div>
@@ -124,58 +126,58 @@
     </section>
 
     <!-- Executive Matrix -->
-    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-24" aria-labelledby="exec-heading">
+    <section class="border-t border-border bg-slate-light py-20 lg:py-24" aria-labelledby="exec-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div data-reveal>
-          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Executive Matrix</p>
-          <h2 id="exec-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">Board leadership</h2>
-          <p class="mt-4 max-w-2xl text-steel">Board leadership guiding strategy, governance, and commercial delivery.</p>
+          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Executive Matrix</p>
+          <h2 id="exec-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">Board leadership</h2>
+          <p class="mt-4 max-w-2xl text-slate-muted">Board leadership guiding strategy, governance, and commercial delivery.</p>
         </div>
 
         <div class="mt-12 grid gap-6 lg:grid-cols-2" data-stagger>
-          <article data-stagger-item class="surface-panel relative overflow-hidden border border-white/10 bg-obsidian">
-            <div class="absolute left-0 top-0 h-full w-1 bg-amber-500"></div>
+          <article data-stagger-item class="surface-panel relative overflow-hidden border border-border bg-white">
+            <div class="absolute left-0 top-0 h-full w-1 bg-teal"></div>
             <div class="p-8 sm:p-10">
-              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Chairman</p>
-              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Mst. Nusrat Jahan Ratna</h3>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-teal">Chairman</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-slate">Mst. Nusrat Jahan Ratna</h3>
               <dl class="mt-6 space-y-3 text-sm">
-                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
-                  <dt class="text-steel">Office</dt>
-                  <dd class="font-semibold text-archwhite">Chairman, BBCL</dd>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-border pb-3">
+                  <dt class="text-slate-muted">Office</dt>
+                  <dd class="font-semibold text-slate">Chairman, BBCL</dd>
                 </div>
-                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
-                  <dt class="text-steel">Phone</dt>
-                  <dd class="font-semibold text-archwhite">
-                    <a href="tel:+8801833314038" class="transition hover:text-amber-400">+880 1833-314038</a>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-border pb-3">
+                  <dt class="text-slate-muted">Phone</dt>
+                  <dd class="font-semibold text-slate">
+                    <a href="tel:+8801833314038" class="transition hover:text-teal">+880 1833-314038</a>
                   </dd>
                 </div>
                 <div class="flex flex-wrap justify-between gap-2">
-                  <dt class="text-steel">Mandate</dt>
-                  <dd class="max-w-xs text-right text-archwhite">Strategic oversight &amp; institutional governance</dd>
+                  <dt class="text-slate-muted">Mandate</dt>
+                  <dd class="max-w-xs text-right text-slate">Strategic oversight &amp; institutional governance</dd>
                 </div>
               </dl>
             </div>
           </article>
 
-          <article data-stagger-item class="surface-panel relative overflow-hidden border border-white/10 bg-obsidian">
-            <div class="absolute left-0 top-0 h-full w-1 bg-amber-500"></div>
+          <article data-stagger-item class="surface-panel relative overflow-hidden border border-border bg-white">
+            <div class="absolute left-0 top-0 h-full w-1 bg-teal"></div>
             <div class="p-8 sm:p-10">
-              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Managing Director</p>
-              <h3 class="mt-3 text-2xl font-extrabold text-archwhite">Mst. Salina Bibi</h3>
+              <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-teal">Managing Director</p>
+              <h3 class="mt-3 text-2xl font-extrabold text-slate">Mst. Salina Bibi</h3>
               <dl class="mt-6 space-y-3 text-sm">
-                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
-                  <dt class="text-steel">Office</dt>
-                  <dd class="font-semibold text-archwhite">Managing Director, BBCL</dd>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-border pb-3">
+                  <dt class="text-slate-muted">Office</dt>
+                  <dd class="font-semibold text-slate">Managing Director, BBCL</dd>
                 </div>
-                <div class="flex flex-wrap justify-between gap-2 border-b border-white/5 pb-3">
-                  <dt class="text-steel">Phone</dt>
-                  <dd class="font-semibold text-archwhite">
-                    <a href="tel:+8801958454540" class="transition hover:text-amber-400">+880 1958-454540</a>
+                <div class="flex flex-wrap justify-between gap-2 border-b border-border pb-3">
+                  <dt class="text-slate-muted">Phone</dt>
+                  <dd class="font-semibold text-slate">
+                    <a href="tel:+8801958454540" class="transition hover:text-teal">+880 1958-454540</a>
                   </dd>
                 </div>
                 <div class="flex flex-wrap justify-between gap-2">
-                  <dt class="text-steel">Mandate</dt>
-                  <dd class="max-w-xs text-right text-archwhite">Operational execution &amp; commercial stewardship</dd>
+                  <dt class="text-slate-muted">Mandate</dt>
+                  <dd class="max-w-xs text-right text-slate">Operational execution &amp; commercial stewardship</dd>
                 </div>
               </dl>
             </div>
@@ -185,254 +187,254 @@
     </section>
 
     <!-- Engineering Registry -->
-    <section class="relative border-t border-white/5 bg-obsidian py-20 lg:py-24" aria-labelledby="eng-heading">
+    <section class="relative border-t border-border bg-white py-20 lg:py-24" aria-labelledby="eng-heading">
       <div class="absolute inset-0 grid-atmosphere opacity-25"></div>
       <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div data-reveal>
-          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Professional Engineering Registry</p>
-          <h2 id="eng-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">Elite technical team</h2>
-          <p class="mt-4 max-w-2xl text-steel">BUET-trained civil leadership and specialist engineers directing field operations, construction delivery, and project controls across the portfolio.</p>
+          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Professional Engineering Registry</p>
+          <h2 id="eng-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">Elite technical team</h2>
+          <p class="mt-4 max-w-2xl text-slate-muted">BUET-trained civil leadership and specialist engineers directing field operations, construction delivery, and project controls across the portfolio.</p>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. S.M Nazmul Alam</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">General Manager (Operation)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (Water Resource), BUET</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">18</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. S.M Nazmul Alam</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">General Manager (Operation)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (Water Resource), BUET</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">18</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Md. Asif Masud</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Business Development</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (Water Resource), BUET</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">18</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Md. Asif Masud</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Business Development</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (Water Resource), BUET</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">18</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Kamrul Ahmed</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">AGM (Construction)</p>
-            <p class="mt-3 text-xs text-steel"><span class="font-semibold text-archwhite">18</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Kamrul Ahmed</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">AGM (Construction)</p>
+            <p class="mt-3 text-xs text-slate-muted"><span class="font-semibold text-slate">18</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Kazi Rafique Anwer</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">AGM (Construction)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (Civil)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">22</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Kazi Rafique Anwer</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">AGM (Construction)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (Civil)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">22</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Ruhul Amin</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">AGM (Costing)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engr. (Civil)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">17</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Ruhul Amin</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">AGM (Costing)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engr. (Civil)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">17</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Aminul Islam</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Engineer (Cost Analysis)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (Civil)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">8</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Aminul Islam</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Engineer (Cost Analysis)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (Civil)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">8</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Sheikh Abdul Hamid</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">DGM (Electrical)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (EEE)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">17</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Sheikh Abdul Hamid</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">DGM (Electrical)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (EEE)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">17</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Md. Safiur Rahman</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Project Engineer</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (EEE)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">8</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Md. Safiur Rahman</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Project Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (EEE)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">8</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Sanjoy Chowdhury</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (EHS)</p>
-            <p class="mt-3 text-xs text-steel">B.Sc Engineer (Chemical)</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">10</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Sanjoy Chowdhury</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (EHS)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Sc Engineer (Chemical)</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">10</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Ronju</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Assistant Manager</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Electrical</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">12</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Md. Ronju</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Assistant Manager</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Electrical</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">12</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Ma. Shajalal</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Assistant Engineer</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Electrical</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">6</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Ma. Shajalal</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Assistant Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Electrical</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">6</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Saidur Rahman</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Site Engineer</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Civil</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">10</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Md. Saidur Rahman</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Site Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Civil</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">10</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">SM Mainul Islam</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Site Engineer</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Civil</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">17</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">SM Mainul Islam</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Site Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Civil</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">17</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Humayun Kabir</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Site Engineer</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Civil</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">12</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Md. Humayun Kabir</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Site Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Civil</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">12</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Omar Faruq</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Assistant Engineer</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Mechanical</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">15</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Md. Omar Faruq</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Assistant Engineer</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Mechanical</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">15</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Rokibur Rahman Khan</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Assistant Manager</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Mechanical</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">9</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Rokibur Rahman Khan</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Assistant Manager</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Mechanical</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">9</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Abu Jafor Md. Saleh</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Assistant Manager</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Survey</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">5</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Abu Jafor Md. Saleh</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Assistant Manager</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Survey</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">5</span> years experience</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-charcoal/80 p-6">
-            <h3 class="text-base font-bold text-archwhite">Abir Roy Bappy</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">IT Executive</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Computer Engineering</p>
-            <p class="mt-1 text-xs text-steel"><span class="font-semibold text-archwhite">5</span> years experience</p>
+          <article data-stagger-item class="border border-border bg-slate-light p-6">
+            <h3 class="text-base font-bold text-slate">Abir Roy Bappy</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">IT Executive</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Computer Engineering</p>
+            <p class="mt-1 text-xs text-slate-muted"><span class="font-semibold text-slate">5</span> years experience</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Working Team -->
-    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-24" aria-labelledby="working-heading">
+    <section class="border-t border-border bg-slate-light py-20 lg:py-24" aria-labelledby="working-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div data-reveal>
-          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Working Team</p>
-          <h2 id="working-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">Operations &amp; support staff</h2>
-          <p class="mt-4 max-w-2xl text-steel">Accounts, procurement, HR, administration, logistics, EHS, stores, and legal support that keep projects moving.</p>
+          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Working Team</p>
+          <h2 id="working-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">Operations &amp; support staff</h2>
+          <p class="mt-4 max-w-2xl text-slate-muted">Accounts, procurement, HR, administration, logistics, EHS, stores, and legal support that keep projects moving.</p>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Biplob Bepari</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (Accounts &amp; Finance)</p>
-            <p class="mt-3 text-xs text-steel">M.Com</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Biplob Bepari</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (Accounts &amp; Finance)</p>
+            <p class="mt-3 text-xs text-slate-muted">M.Com</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Anjan Kumar</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Asst. Manager (Accounts)</p>
-            <p class="mt-3 text-xs text-steel">MBS</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Anjan Kumar</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Asst. Manager (Accounts)</p>
+            <p class="mt-3 text-xs text-slate-muted">MBS</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. K.M Rokonuzzaman</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Accountant</p>
-            <p class="mt-3 text-xs text-steel">B.Com, MBA</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. K.M Rokonuzzaman</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Accountant</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Com, MBA</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Nur Alam Siddique</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Accountant</p>
-            <p class="mt-3 text-xs text-steel">M.Com</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Nur Alam Siddique</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Accountant</p>
+            <p class="mt-3 text-xs text-slate-muted">M.Com</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Mohammad Altaf Hossen</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (Procurement)</p>
-            <p class="mt-3 text-xs text-steel">MSS</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Mohammad Altaf Hossen</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (Procurement)</p>
+            <p class="mt-3 text-xs text-slate-muted">MSS</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Sagor Saha</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Executive (Procurement)</p>
-            <p class="mt-3 text-xs text-steel">MBA</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Sagor Saha</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Executive (Procurement)</p>
+            <p class="mt-3 text-xs text-slate-muted">MBA</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. K.M Khalafath Ullah</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (HR &amp; Admin)</p>
-            <p class="mt-3 text-xs text-steel">MBA</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. K.M Khalafath Ullah</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (HR &amp; Admin)</p>
+            <p class="mt-3 text-xs text-slate-muted">MBA</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Ms. Sangita Mazumdar</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Executive (Admin)</p>
-            <p class="mt-3 text-xs text-steel">BSS</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Ms. Sangita Mazumdar</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Executive (Admin)</p>
+            <p class="mt-3 text-xs text-slate-muted">BSS</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Shek Omar Faruq</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (EHS)</p>
-            <p class="mt-3 text-xs text-steel">MBA</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Shek Omar Faruq</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (EHS)</p>
+            <p class="mt-3 text-xs text-slate-muted">MBA</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Md. Ariful Islam</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Store in Charge</p>
-            <p class="mt-3 text-xs text-steel">BSS</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Md. Ariful Islam</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Store in Charge</p>
+            <p class="mt-3 text-xs text-slate-muted">BSS</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Mizanur Rahman</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Store Officer</p>
-            <p class="mt-3 text-xs text-steel">HSC</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Mizanur Rahman</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Store Officer</p>
+            <p class="mt-3 text-xs text-slate-muted">HSC</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Mr. Yasir Arafat Mamun</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Senior Executive</p>
-            <p class="mt-3 text-xs text-steel">BA</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Mr. Yasir Arafat Mamun</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Senior Executive</p>
+            <p class="mt-3 text-xs text-slate-muted">BA</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Helal Uddin</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Manager (Logistic)</p>
-            <p class="mt-3 text-xs text-steel">B.Com (Hons), M.Com</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Md. Helal Uddin</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Manager (Logistic)</p>
+            <p class="mt-3 text-xs text-slate-muted">B.Com (Hons), M.Com</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Engr. Ziaul Islam Khan</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Deputy Manager (Logistic)</p>
-            <p class="mt-3 text-xs text-steel">Diploma in Power</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Engr. Ziaul Islam Khan</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Deputy Manager (Logistic)</p>
+            <p class="mt-3 text-xs text-slate-muted">Diploma in Power</p>
           </article>
 
-          <article data-stagger-item class="border border-white/10 bg-obsidian p-6">
-            <h3 class="text-base font-bold text-archwhite">Md. Mojammel Hossain</h3>
-            <p class="mt-1 text-xs font-semibold text-amber-400">Executive (Legal)</p>
-            <p class="mt-3 text-xs text-steel">LLB (Hons), LLM</p>
+          <article data-stagger-item class="border border-border bg-white p-6">
+            <h3 class="text-base font-bold text-slate">Md. Mojammel Hossain</h3>
+            <p class="mt-1 text-xs font-semibold text-teal">Executive (Legal)</p>
+            <p class="mt-3 text-xs text-slate-muted">LLB (Hons), LLM</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Compliance & Legal Vault -->
-    <section class="border-t border-white/5 bg-charcoal py-20 lg:py-24" aria-labelledby="legal-heading">
+    <section class="border-t border-border bg-slate-light py-20 lg:py-24" aria-labelledby="legal-heading">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div data-reveal>
-          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-amber-400">Compliance &amp; Legal Vault</p>
-          <h2 id="legal-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-archwhite sm:text-5xl">Institutional credentials</h2>
-          <p class="mt-4 max-w-2xl text-steel">Statutory and financial credentials verified from the company profile and maintained for tenders and institutional due diligence.</p>
+          <p class="section-kicker text-xs font-semibold uppercase tracking-[0.3em] text-teal">Compliance &amp; Legal Vault</p>
+          <h2 id="legal-heading" class="font-display mt-3 text-4xl font-bold tracking-tight text-slate sm:text-5xl">Institutional credentials</h2>
+          <p class="mt-4 max-w-2xl text-slate-muted">Statutory and financial credentials verified from the company profile and maintained for tenders and institutional due diligence.</p>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
@@ -443,13 +445,13 @@
             data-title="Trade License"
             data-meta="TRAD/DSCC/063035/2020"
             data-body="Valid trade license issued by Dhaka South City Corporation on 25/07/2023, license number TRAD/DSCC/063035/2020, authorizing Bengal Builders &amp; Construction Ltd. to conduct construction and related commercial operations."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 01</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Trade License</h3>
-            <p class="mt-2 text-xs text-steel">TRAD/DSCC/063035/2020 · Dhaka South City Corporation</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 01</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">Trade License</h3>
+            <p class="mt-2 text-xs text-slate-muted">TRAD/DSCC/063035/2020 · Dhaka South City Corporation</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
 
           <button
@@ -459,13 +461,13 @@
             data-title="Tax Registration"
             data-meta="TIN 177353450963"
             data-body="Taxpayer Identification Number (TIN) 177353450963 issued by the National Board of Revenue, Taxes Zone 08, Dhaka. Registered taxpayer status confirmed for institutional contracting and tender participation."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 02</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Tax Registration</h3>
-            <p class="mt-2 text-xs text-steel">TIN 177353450963 · National Board of Revenue</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 02</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">Tax Registration</h3>
+            <p class="mt-2 text-xs text-slate-muted">TIN 177353450963 · National Board of Revenue</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
 
           <button
@@ -475,13 +477,13 @@
             data-title="Certificate of Incorporation"
             data-meta="C-171911/2021"
             data-body="Certificate of Incorporation No. C-171911/2021 issued on 17 June 2021 under the Companies Act (Act XVIII) of 1994, confirming Bengal Builders &amp; Construction Ltd. as a limited company."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 03</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Certificate of Incorporation</h3>
-            <p class="mt-2 text-xs text-steel">C-171911/2021 · 17 June 2021</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 03</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">Certificate of Incorporation</h3>
+            <p class="mt-2 text-xs text-slate-muted">C-171911/2021 · 17 June 2021</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
 
           <button
@@ -491,13 +493,13 @@
             data-title="Income Tax Certificate"
             data-meta="e-TIN 177353450963/Circle-155"
             data-body="Income tax certificate for assessment year 2023-2024 under Taxes Circle-155 (Companies), Taxes Zone-8, Dhaka. e-TIN: 177353450963/Circle-155. Assessment completed under Section 180 of the Income Tax Act, 2023."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 04</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Income Tax Certificate</h3>
-            <p class="mt-2 text-xs text-steel">e-TIN 177353450963/Circle-155 · AY 2023-24</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 04</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">Income Tax Certificate</h3>
+            <p class="mt-2 text-xs text-slate-muted">e-TIN 177353450963/Circle-155 · AY 2023-24</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
 
           <button
@@ -507,13 +509,13 @@
             data-title="BIN Certificate"
             data-meta="BIN 004304069-0208"
             data-body="Business Identification Number (BIN) 004304069-0208 issued under the Value Added Tax and Supplementary Duty Act, 2012. Issue date: 22/11/2021. Effective date: 11/2021. Type: Private Limited, 1st Class Contractor. Major activity: Services."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 05</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">BIN Certificate</h3>
-            <p class="mt-2 text-xs text-steel">BIN 004304069-0208 · 22/11/2021</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 05</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">BIN Certificate</h3>
+            <p class="mt-2 text-xs text-slate-muted">BIN 004304069-0208 · 22/11/2021</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
 
           <button
@@ -523,13 +525,13 @@
             data-title="Bank Solvency"
             data-meta="Modhumoti Bank PLC"
             data-body="Bank solvency certificate dated 01/04/2024 issued by Modhumoti Bank PLC, VIP Road Branch, Dhaka. Current deposit account number 113511100000224. The bank certifies that Bengal Builders &amp; Construction Ltd. is financially sound and solvent."
-            class="group cursor-pointer border border-white/10 bg-obsidian p-7 text-left transition hover:border-amber-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            class="group cursor-pointer border border-border bg-white p-7 text-left transition hover:border-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             tabindex="0"
           >
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-400">Registry 06</p>
-            <h3 class="mt-4 text-lg font-bold text-archwhite group-hover:text-amber-400">Bank Solvency</h3>
-            <p class="mt-2 text-xs text-steel">Modhumoti Bank PLC · Account 113511100000224</p>
-            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-steel group-hover:text-archwhite">View summary →</p>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-teal">Registry 06</p>
+            <h3 class="mt-4 text-lg font-bold text-slate group-hover:text-teal">Bank Solvency</h3>
+            <p class="mt-2 text-xs text-slate-muted">Modhumoti Bank PLC · Account 113511100000224</p>
+            <p class="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-slate-muted group-hover:text-slate">View summary →</p>
           </button>
         </div>
       </div>
@@ -538,45 +540,48 @@
 
   <!-- Legal Modal -->
   <div id="legal-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
-    <div id="legal-modal-backdrop" class="absolute inset-0 bg-obsidian/70 backdrop-blur-md"></div>
-    <div id="legal-modal-panel" class="relative w-full max-w-2xl border border-amber-500/30 bg-charcoal/90 p-8 shadow-2xl backdrop-blur-xl sm:p-10">
-      <button id="legal-modal-close" type="button" class="absolute right-4 top-4 border border-white/15 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-archwhite transition hover:border-amber-400 hover:text-amber-400" aria-label="Close modal">Close</button>
-      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-amber-400">Credential Preview</p>
-      <h2 id="legal-modal-title" class="mt-4 text-2xl font-extrabold text-archwhite sm:text-3xl"></h2>
-      <p id="legal-modal-meta" class="mt-3 font-mono text-sm text-amber-400"></p>
-      <div class="mt-6 h-px w-full bg-gradient-to-r from-amber-500/60 via-white/10 to-transparent"></div>
-      <p id="legal-modal-body" class="mt-6 text-sm leading-relaxed text-steel"></p>
-      <p class="mt-8 text-[11px] uppercase tracking-[0.16em] text-steel">Bengal Builders &amp; Construction Ltd. · Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</p>
+    <div id="legal-modal-backdrop" class="absolute inset-0 bg-slate-900/70 backdrop-blur-md"></div>
+    <div id="legal-modal-panel" class="relative w-full max-w-2xl border border-teal/30 bg-white p-8 shadow-2xl backdrop-blur-xl sm:p-10">
+      <button id="legal-modal-close" type="button" class="absolute right-4 top-4 border border-border px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-slate transition hover:border-teal hover:text-teal" aria-label="Close modal">Close</button>
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-teal">Credential Preview</p>
+      <h2 id="legal-modal-title" class="mt-4 text-2xl font-extrabold text-slate sm:text-3xl"></h2>
+      <p id="legal-modal-meta" class="mt-3 font-mono text-sm text-teal"></p>
+      <div class="mt-6 h-px w-full bg-gradient-to-r from-teal/60 via-slate-200/10 to-transparent"></div>
+      <p id="legal-modal-body" class="mt-6 text-sm leading-relaxed text-slate-muted"></p>
+      <p class="mt-8 text-[11px] uppercase tracking-[0.16em] text-slate-muted">Bengal Builders &amp; Construction Ltd. · Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</p>
     </div>
   </div>
 
-  <footer class="border-t border-white/10 bg-obsidian">
+  <footer class="border-t border-border bg-white">
     <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 lg:flex-row lg:items-start lg:justify-between lg:px-8">
       <div>
-        <p class="text-sm font-extrabold tracking-[0.2em] text-archwhite uppercase">Bengal Builders &amp; Construction Ltd.</p>
-        <p class="mt-2 max-w-sm text-sm text-steel">Corporate identity &amp; legal transparency for institutional partners.</p>
+        <div class="flex items-center gap-3">
+          <img src="images/bbcl-logo.png" alt="BBCL logo" class="h-12 w-12 object-cover border border-teal/40" width="48" height="48" />
+          <p class="text-sm font-extrabold tracking-[0.2em] text-slate uppercase">Bengal Builders &amp; Construction Ltd.</p>
+        </div>
+        <p class="mt-3 max-w-sm text-sm text-slate-muted">Corporate identity &amp; legal transparency for institutional partners.</p>
       </div>
-      <div class="text-sm text-steel">
-        <p class="font-semibold text-archwhite">Headquarters</p>
+      <div class="text-sm text-slate-muted">
+        <p class="font-semibold text-slate">Headquarters</p>
         <p class="mt-2">Pritom Zaman Tower (13th Floor)</p>
         <p>37/2, Purana Paltan, Dhaka-1000, Bangladesh</p>
         <p class="mt-2">
-          <a href="tel:+8801833314026" class="transition hover:text-amber-400">+880 1833-314026</a>
+          <a href="tel:+8801833314026" class="transition hover:text-teal">+880 1833-314026</a>
         </p>
         <p>
-          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-amber-400">busdev@bcoc.com.bd</a>
+          <a href="mailto:busdev@bcoc.com.bd" class="transition hover:text-teal">busdev@bcoc.com.bd</a>
         </p>
         <p class="mt-1">Established June 2021</p>
       </div>
       <nav aria-label="Footer">
-        <ul class="flex flex-col gap-2 text-sm text-steel">
-          <li><a href="index.html" class="hover:text-amber-400">Home</a></li>
-          <li><a href="activities.html" class="hover:text-amber-400">Activities</a></li>
-          <li><a href="projects.html" class="hover:text-amber-400">Projects</a></li>
+        <ul class="flex flex-col gap-2 text-sm text-slate-muted">
+          <li><a href="index.html" class="hover:text-teal">Home</a></li>
+          <li><a href="activities.html" class="hover:text-teal">Activities</a></li>
+          <li><a href="projects.html" class="hover:text-teal">Projects</a></li>
         </ul>
       </nav>
     </div>
-    <div class="border-t border-white/5 py-5 text-center text-xs text-steel">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
+    <div class="border-t border-border py-5 text-center text-xs text-slate-muted">© <span id="year"></span> Bengal Builders &amp; Construction Ltd.</div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>

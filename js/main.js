@@ -47,8 +47,8 @@
     document.querySelectorAll("[data-nav]").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === path || (path === "" && href === "index.html")) {
-        link.classList.add("text-amber-400", "is-active");
-        link.classList.remove("text-steel");
+        link.classList.add("text-teal", "is-active");
+        link.classList.remove("text-slate-muted");
       }
     });
   }
@@ -214,13 +214,13 @@
     const host = ensureToastHost();
     const toast = document.createElement("div");
     toast.className =
-      "pointer-events-auto max-w-sm w-full border border-amber-500/40 bg-[#1A1A1A]/95 backdrop-blur-md px-5 py-4 shadow-xl translate-x-8 opacity-0 transition-all duration-300";
+      "pointer-events-auto max-w-sm w-full border border-teal/40 bg-white/95 backdrop-blur-md px-5 py-4 shadow-xl translate-x-8 opacity-0 transition-all duration-300";
     toast.innerHTML =
-      '<p class="text-sm font-semibold tracking-wide text-white">' +
+      '<p class="text-sm font-semibold tracking-wide text-slate">' +
       message +
       "</p>" +
       (detail
-        ? '<p class="mt-1 text-xs text-steel leading-relaxed">' + detail + "</p>"
+        ? '<p class="mt-1 text-xs text-slate-muted leading-relaxed">' + detail + "</p>"
         : "");
     host.appendChild(toast);
 
@@ -315,11 +315,11 @@
         activeType = tab.getAttribute("data-material-tab");
         tabs.forEach((t) => {
           const on = t === tab;
-          t.classList.toggle("bg-amber-500", on);
-          t.classList.toggle("text-obsidian", on);
-          t.classList.toggle("text-steel", !on);
-          t.classList.toggle("border-amber-500", on);
-          t.classList.toggle("border-white/10", !on);
+          t.classList.toggle("bg-teal", on);
+          t.classList.toggle("text-white", on);
+          t.classList.toggle("text-slate-muted", !on);
+          t.classList.toggle("border-teal", on);
+          t.classList.toggle("border-border", !on);
           t.setAttribute("aria-selected", String(on));
         });
         applyFilter();
@@ -386,11 +386,11 @@
 
         tabBtns.forEach((b) => {
           const on = b === btn;
-          b.classList.toggle("bg-amber-500", on);
-          b.classList.toggle("text-obsidian", on);
-          b.classList.toggle("text-steel", !on);
-          b.classList.toggle("border-amber-500", on);
-          b.classList.toggle("border-white/10", !on);
+          b.classList.toggle("bg-teal", on);
+          b.classList.toggle("text-white", on);
+          b.classList.toggle("text-slate-muted", !on);
+          b.classList.toggle("border-teal", on);
+          b.classList.toggle("border-border", !on);
           b.setAttribute("aria-selected", String(on));
         });
 
