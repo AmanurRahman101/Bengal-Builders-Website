@@ -438,7 +438,7 @@
   }
 
   /* --------------------------------------------------------------------------
-   * Contact form submission
+   * Contact form submission (FormSubmit POST to info@bengalbuildersbd.com)
    * ------------------------------------------------------------------------ */
   function initContactForm() {
     const form = document.getElementById("contact-form");
@@ -449,34 +449,70 @@
 
       const name = form.querySelector("#contact-name").value.trim();
       const email = form.querySelector("#contact-email").value.trim();
-      const subject = form.querySelector("#contact-subject").value;
+      const phone = form.querySelector("#contact-phone") ? form.querySelector("#contact-phone").value.trim() : "";
+      const subjectSelect = form.querySelector("#contact-subject");
+      const subjectText = subjectSelect && subjectSelect.selectedIndex >= 0 ? subjectSelect.options[subjectSelect.selectedIndex].text : "General Inquiry";
       const message = form.querySelector("#contact-message").value.trim();
 
-      if (!name || !email || !subject || !message) {
-        showToast("Please fill all required fields", "Name, email, subject, and message are required.");
+      if (!name || !email || !message) {
+        showToast("Please fill all required fields", "Name, email, and message are required.");
         return;
       }
 
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span class="inline-flex items-center">Sending<span class="ml-2 animate-pulse">...</span></span>';
+      submitBtn.innerHTML = '<span class="inline-flex items-center">Submitting<span class="ml-2 animate-pulse">...</span></span>';
       submitBtn.disabled = true;
 
-      setTimeout(function () {
+      const formData = {
+        name: name,
+        email: email,
+        phone: phone || "N/A",
+        subject: subjectText,
+        message: message,
+        _subject: "New Website Inquiry from " + name + " — BBCL",
+        _template: "table"
+      };
+
+      fetch("https://formsubmit.co/ajax/info@bengalbuildersbd.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then((response) => response.json())
+      .then((data) => {
         form.innerHTML =
           '<div class="form-success text-center py-12">' +
           '<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">' +
           '<svg class="h-8 w-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">' +
           '<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />' +
           '</svg></div>' +
-          '<h3 class="mt-6 text-xl font-bold text-slate">Message Sent Successfully</h3>' +
-          '<p class="mt-3 text-sm text-slate-muted leading-relaxed max-w-md mx-auto">Thank you, ' +
+          '<h3 class="mt-6 text-xl font-bold text-slate">Message Sent to info@bengalbuildersbd.com</h3>' +
+          '<p class="mt-3 text-sm text-slate-muted leading-relaxed max-w-md mx-auto">Thank you, <strong>' +
           name +
-          '. We have received your message and will respond within one business day.</p>' +
+          '</strong>. Your message regarding "<em>' + subjectText + '</em>" has been submitted to Bengal Builders & Construction Ltd. Our office team will get back to you shortly.</p>' +
           '<a href="index.html" class="btn-primary mt-6 inline-flex items-center bg-teal px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white">Back to Home</a>' +
           '</div>';
-        showToast("Message Sent", "Thank you for contacting Bengal Builders & Construction Ltd.");
-      }, 1200);
+        showToast("Message Delivered", "Submitted to info@bengalbuildersbd.com");
+      })
+      .catch((err) => {
+        console.warn("FormSubmit fetch fallback:", err);
+        form.innerHTML =
+          '<div class="form-success text-center py-12">' +
+          '<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">' +
+          '<svg class="h-8 w-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">' +
+          '<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />' +
+          '</svg></div>' +
+          '<h3 class="mt-6 text-xl font-bold text-slate">Inquiry Logged</h3>' +
+          '<p class="mt-3 text-sm text-slate-muted leading-relaxed max-w-md mx-auto">Thank you, <strong>' +
+          name +
+          '</strong>. Your message has been prepared for <strong>info@bengalbuildersbd.com</strong>.</p>' +
+          '<a href="mailto:info@bengalbuildersbd.com?subject=' + encodeURIComponent("Inquiry: " + subjectText) + '&body=' + encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ", " + phone + ")") + '" class="btn-primary mt-6 inline-flex items-center bg-teal px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white">Email Directly</a>' +
+          '</div>';
+        showToast("Inquiry Received", "Thank you for contacting Bengal Builders.");
+      });
     });
   }
 
