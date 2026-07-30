@@ -36,19 +36,19 @@
 <body class="antialiased">
 
   <!-- Navigation -->
-  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-border bg-white backdrop-blur-md">
-    <div class="border-b border-border">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-1.5 text-[11px] text-slate-muted lg:px-8">
-        <span>Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
-        <span class="flex items-center gap-4">
-          <a href="tel:+8801833319637" class="transition hover:text-teal">+880 1833-319637</a>
-          <a href="mailto:info@bengalbuildersbd.com" class="transition hover:text-teal">info@bengalbuildersbd.com</a>
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
+    <div class="border-b border-border/80 bg-slate-900 text-white">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 text-[11px] font-medium lg:px-8">
+        <span class="truncate pr-2 text-slate-300">Pritom Zaman Tower (13th Floor), 37/2, Purana Paltan, Dhaka-1000</span>
+        <span class="flex shrink-0 items-center gap-3 sm:gap-5">
+          <a href="tel:+8801833319637" class="transition hover:text-teal-light">+880 1833-319637</a>
+          <a href="mailto:info@bengalbuildersbd.com" class="hidden sm:inline transition hover:text-teal-light">info@bengalbuildersbd.com</a>
         </span>
       </div>
     </div>
-    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-2 lg:px-8" aria-label="Primary">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-5 lg:px-8" aria-label="Primary">
       <a href="index.html" class="group flex items-center gap-3">
-        <img src="images/bbcl-logo.png" alt="BBCL" class="brand-mark h-14 w-14 sm:h-16 sm:w-16 object-contain" width="64" height="64" />
+        <img src="images/bbcl-logo.png" alt="BBCL" class="brand-mark h-12 w-12 sm:h-16 sm:w-16 object-contain" width="64" height="64" />
         <span class="leading-tight">
           <span class="block text-base sm:text-lg font-extrabold tracking-[0.14em] text-primary-dark uppercase leading-none">BBCL</span>
           <span class="mt-1 block text-[10px] sm:text-[11px] font-semibold tracking-[0.16em] text-slate-muted uppercase leading-none">Bengal Builders</span>
@@ -56,11 +56,11 @@
       </a>
 
       <ul class="hidden items-center gap-8 text-sm font-medium tracking-wide lg:flex">
-        <li><a data-nav href="index.html" class="text-slate-muted">Home</a></li>
-        <li><a data-nav href="about.html" class="text-slate-muted">About</a></li>
-        <li><a data-nav href="activities.html" class="text-slate-muted">Activities</a></li>
-        <li><a data-nav href="materials.html" class="text-slate-muted">Materials</a></li>
-        <li><a data-nav href="projects.html" class="text-slate-muted">Projects</a></li>
+        <li><a data-nav href="index.html" class="text-slate-muted transition hover:text-teal">Home</a></li>
+        <li><a data-nav href="about.html" class="text-slate-muted transition hover:text-teal">About</a></li>
+        <li><a data-nav href="activities.html" class="text-slate-muted transition hover:text-teal">Activities</a></li>
+        <li><a data-nav href="materials.html" class="text-slate-muted transition hover:text-teal">Materials</a></li>
+        <li><a data-nav href="projects.html" class="text-slate-muted transition hover:text-teal">Projects</a></li>
         <li><a data-nav href="contact.html" class="text-slate-muted transition hover:text-teal">Contact</a></li>
       </ul>
 
@@ -68,22 +68,31 @@
         <a href="contact.html" class="btn-primary hidden sm:inline-flex items-center bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">
           Contact Us
         </a>
-        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-border text-slate lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-slate-light text-slate transition hover:border-teal hover:text-teal lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <div id="mobile-menu" class="border-t border-border bg-white backdrop-blur-md lg:hidden">
-      <ul class="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 text-sm font-medium">
-        <li><a data-nav href="index.html" class="block py-2.5 text-slate-muted hover:text-teal">Home</a></li>
-        <li><a data-nav href="about.html" class="block py-2.5 text-slate-muted hover:text-teal">About</a></li>
-        <li><a data-nav href="activities.html" class="block py-2.5 text-slate-muted hover:text-teal">Activities</a></li>
-        <li><a data-nav href="materials.html" class="block py-2.5 text-slate-muted hover:text-teal">Materials</a></li>
-        <li><a data-nav href="projects.html" class="block py-2.5 text-slate-muted hover:text-teal">Projects</a></li>
-        <li><a data-nav href="contact.html" class="block py-2.5 text-slate-muted hover:text-teal">Contact</a></li>
-        <li class="pt-2"><a href="contact.html" class="btn-primary inline-flex bg-teal px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white">Contact Us</a></li>
-      </ul>
+    <div id="mobile-menu" class="border-t border-border lg:hidden">
+      <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+        <ul class="flex flex-col gap-1 text-sm font-semibold text-slate">
+          <li><a data-nav href="index.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>Home</span> <span class="text-slate-muted text-xs">→</span></a></li>
+          <li><a data-nav href="about.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>About</span> <span class="text-slate-muted text-xs">→</span></a></li>
+          <li><a data-nav href="activities.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>Activities</span> <span class="text-slate-muted text-xs">→</span></a></li>
+          <li><a data-nav href="materials.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>Materials</span> <span class="text-slate-muted text-xs">→</span></a></li>
+          <li><a data-nav href="projects.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>Projects</span> <span class="text-slate-muted text-xs">→</span></a></li>
+          <li><a data-nav href="contact.html" class="flex items-center justify-between rounded-lg px-3.5 py-3 transition hover:bg-teal/10 hover:text-teal"><span>Contact</span> <span class="text-slate-muted text-xs">→</span></a></li>
+        </ul>
+        <div class="mt-4 border-t border-border pt-4 grid grid-cols-2 gap-3">
+          <a href="tel:+8801833319637" class="btn-ghost inline-flex items-center justify-center rounded-lg border border-border py-2.5 text-xs font-bold uppercase tracking-wider text-slate text-center hover:border-teal hover:text-teal">
+            Call Direct
+          </a>
+          <a href="contact.html" class="btn-primary inline-flex items-center justify-center rounded-lg bg-teal py-2.5 text-xs font-bold uppercase tracking-wider text-white text-center">
+            Contact Us
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -99,9 +108,9 @@
       <div class="hero-overlay absolute inset-0"></div>
       <div class="grid-atmosphere absolute inset-0 opacity-40"></div>
 
-      <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-28 pt-32 lg:justify-center lg:px-8 lg:pb-24 lg:pt-28">
-        <p data-hero class="text-xs font-semibold uppercase tracking-[0.35em] text-teal">Bengal Builders &amp; Construction Ltd.</p>
-        <h1 id="hero-heading" data-hero class="font-display mt-5 max-w-4xl text-5xl font-bold uppercase leading-[0.92] tracking-tight text-slate sm:text-6xl md:text-7xl lg:text-8xl">
+      <div class="relative mx-auto flex min-h-[85vh] sm:min-h-screen max-w-7xl flex-col justify-end px-4 sm:px-5 pb-20 pt-36 lg:justify-center lg:px-8 lg:pb-24 lg:pt-28">
+        <p data-hero class="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.3em] sm:tracking-[0.35em] text-teal">Bengal Builders &amp; Construction Ltd.</p>
+        <h1 id="hero-heading" data-hero class="font-display mt-4 sm:mt-5 max-w-4xl text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.94] tracking-tight text-slate">
           Architecting<br />Bangladesh's<br /><span class="text-teal">Horizon</span>
         </h1>
         <p data-hero class="mt-6 max-w-xl text-base leading-relaxed text-slate-muted sm:text-lg">

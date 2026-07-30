@@ -20,7 +20,7 @@
 
     if (nav) {
       const onScroll = () => {
-        nav.classList.toggle("nav-scrolled", window.scrollY > 24);
+        nav.classList.toggle("nav-scrolled", window.scrollY > 16);
       };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
@@ -29,9 +29,19 @@
     if (menuBtn && mobileMenu) {
       mobileMenu.classList.remove("hidden");
 
+      const iconSvg = menuBtn.querySelector("svg");
       const setOpen = (open) => {
         mobileMenu.classList.toggle("is-open", open);
+        document.body.classList.toggle("menu-open", open);
         menuBtn.setAttribute("aria-expanded", String(open));
+
+        if (iconSvg) {
+          if (open) {
+            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+          } else {
+            iconSvg.innerHTML = '<path stroke-linecap="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/>';
+          }
+        }
       };
 
       menuBtn.addEventListener("click", () => {
@@ -41,13 +51,19 @@
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => setOpen(false));
       });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+          setOpen(false);
+        }
+      });
     }
 
     const path = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("[data-nav]").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === path || (path === "" && href === "index.html")) {
-        link.classList.add("text-teal", "is-active");
+        link.classList.add("text-teal", "font-bold", "is-active");
         link.classList.remove("text-slate-muted");
       }
     });
