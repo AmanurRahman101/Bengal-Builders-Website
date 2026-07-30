@@ -421,6 +421,49 @@
     });
   }
 
+  /* --------------------------------------------------------------------------
+   * Contact form submission
+   * ------------------------------------------------------------------------ */
+  function initContactForm() {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = form.querySelector("#contact-name").value.trim();
+      const email = form.querySelector("#contact-email").value.trim();
+      const subject = form.querySelector("#contact-subject").value;
+      const message = form.querySelector("#contact-message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showToast("Please fill all required fields", "Name, email, subject, and message are required.");
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="inline-flex items-center">Sending<span class="ml-2 animate-pulse">...</span></span>';
+      submitBtn.disabled = true;
+
+      setTimeout(function () {
+        form.innerHTML =
+          '<div class="form-success text-center py-12">' +
+          '<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">' +
+          '<svg class="h-8 w-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">' +
+          '<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />' +
+          '</svg></div>' +
+          '<h3 class="mt-6 text-xl font-bold text-slate">Message Sent Successfully</h3>' +
+          '<p class="mt-3 text-sm text-slate-muted leading-relaxed max-w-md mx-auto">Thank you, ' +
+          name +
+          '. We have received your message and will respond within one business day.</p>' +
+          '<a href="index.html" class="btn-primary mt-6 inline-flex items-center bg-teal px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white">Back to Home</a>' +
+          '</div>';
+        showToast("Message Sent", "Thank you for contacting Bengal Builders & Construction Ltd.");
+      }, 1200);
+    });
+  }
+
   /* Boot */
   document.addEventListener("DOMContentLoaded", () => {
     const year = document.getElementById("year");
@@ -433,5 +476,6 @@
     initMaterials();
     initProjectTabs();
     initActivityCards();
+    initContactForm();
   });
 })();

@@ -11,8 +11,8 @@
   --accent-yellow: #EAB308;
   --accent-light-blue: #38BDF8;
   --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #64748B;
+  --text-secondary: #334155;
+  --text-muted: #475569;
   --bg: #FFFFFF;
   --bg-soft: #F8FAFC;
   --bg-muted: #F1F5F9;
@@ -39,6 +39,7 @@ html {
 
 body {
   margin: 0;
+  font-size: 1.0625rem;
   font-family: Montserrat, ui-sans-serif, system-ui, sans-serif;
   background:
     radial-gradient(1200px 600px at 12% -10%, rgba(56, 189, 248, 0.06), transparent 55%),
@@ -420,6 +421,35 @@ input[type="text"]:focus {
 
 .stat-glow {
   text-shadow: 0 0 28px rgba(13, 148, 136, 0.18);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Contact form                                                               */
+/* -------------------------------------------------------------------------- */
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+  transition: border-color 0.25s var(--ease-soft), box-shadow 0.25s var(--ease-soft);
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+#contact-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23475569' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  padding-right: 2.5rem;
+}
+
+#contact-form .form-success {
+  animation: modal-in 0.35s var(--ease-out) both;
 }
 
 /* -------------------------------------------------------------------------- */
